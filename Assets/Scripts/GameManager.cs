@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
         2) Update chosenMap with m:
 
         selectMap(newMap);
+
+        3) change the scene to LevelMenu
         */
     }
 
@@ -58,6 +60,8 @@ public class GameManager : MonoBehaviour
         if(level >= 0 && level <= 1) { // make sure is valid level
             chosenDifficulty = level;
         }
+
+        // FIXME: add code to change the scene to the actual game
     }
 
     // Changes the current difficulty to parameter d.
@@ -65,6 +69,10 @@ public class GameManager : MonoBehaviour
     /*
     private void selectDifficulty(Difficulty d) { chosenDifficulty = d; }
     */
+
+    public void startMenuOnClick(string nextScene) {
+        // FIXME: add code to change the scene to nextScene
+    }
 
     // Does everything the game needs to do in a single frame.
     void playGame()
