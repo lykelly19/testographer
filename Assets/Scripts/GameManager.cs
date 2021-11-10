@@ -31,6 +31,21 @@ public class GameManager : MonoBehaviour
     private void selectMap(Map m) { chosenMap = m; }
     */
 
+    /*
+    Function to call from the map menu to choose map.
+    Input: the name of the map, which matches the name stored in one of the map objects.
+    Result: chosenMap is updated
+    */
+    public void chooseMap(string name) {
+        //Map newMap;
+        /*
+        1) Find the map m in the array/list/vector/whatever of maps where m.getName() == name
+        2) Update chosenMap with m:
+        
+        selectMap(newMap);
+        */
+    }
+
     // Changes the current difficulty to parameter d.
     // Commented out until Difficulty class is finished.
     /*
