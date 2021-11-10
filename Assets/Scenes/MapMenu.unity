@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 83006544}
   - component: {fileID: 83006543}
   - component: {fileID: 83006542}
+  - component: {fileID: 83006545}
   m_Layer: 5
   m_Name: Europe Button
   m_TagString: Untagged
@@ -206,7 +207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 83006543}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83006545}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: chooseMap
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Europe
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &83006543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +258,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83006540}
   m_CullTransparentMesh: 1
+--- !u!114 &83006545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83006540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &214425673
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +692,7 @@ GameObject:
   - component: {fileID: 390586569}
   - component: {fileID: 390586568}
   - component: {fileID: 390586567}
+  - component: {fileID: 390586570}
   m_Layer: 5
   m_Name: US Button
   m_TagString: Untagged
@@ -738,7 +764,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 390586568}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 390586570}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: chooseMap
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: United States
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &390586568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,6 +815,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390586565}
   m_CullTransparentMesh: 1
+--- !u!114 &390586570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390586565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &620515196
 GameObject:
   m_ObjectHideFlags: 0

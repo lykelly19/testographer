@@ -209,8 +209,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 83006545}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: chooseLevel
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: chooseDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 83006540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31262cbcd28df7046b20b8c3deb783a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &214425673
@@ -766,8 +766,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 390586570}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: chooseLevel
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: chooseDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 390586565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31262cbcd28df7046b20b8c3deb783a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &620515196
