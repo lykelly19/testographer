@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;  // for changing scenes
 
 public class GameManager : MonoBehaviour
 {
-    // Variables for when View, Difficulty, and Map classes are complete.
+    // Variables for when View, and Map classes are complete.
     /* 
     View myView;
-    Difficulty chosenDifficulty;
+   
     Map chosenMap;
     */
+    // there is no difficulty class, just an int
+    int chosenDifficulty = -1;
     
     // GameManager constructor.
     public GameManager()
@@ -41,9 +43,20 @@ public class GameManager : MonoBehaviour
         /*
         1) Find the map m in the array/list/vector/whatever of maps where m.getName() == name
         2) Update chosenMap with m:
-        
+
         selectMap(newMap);
         */
+    }
+
+    /*
+    Function to call from the level menu to choose level.
+    Input: the level, an integer
+    Result: chosenDifficulty = level
+    */
+    public void chooseDifficulty(int level) {
+        if(level >= 0 && level <= 1) { // make sure is valid level
+            chosenDifficulty = level;
+        }
     }
 
     // Changes the current difficulty to parameter d.
