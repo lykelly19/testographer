@@ -17,8 +17,8 @@ public class MenuManager : MonoBehaviour
         getTitle(): returns page title
         getSubtitle(): returns page subtitle
     */
-    public void displayMenu() {
-
+    public void chooseLevel(int level) {
+        //GameManager.chooseDifficulty(level);
     }
 
     // Start is called before the first frame update
