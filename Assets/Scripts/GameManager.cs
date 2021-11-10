@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,26 +6,16 @@ using UnityEngine.SceneManagement;  // for changing scenes
 
 public class GameManager : MonoBehaviour
 {
-    // Variables for when View, and Map classes are complete.
-    /* 
-    View myView;
-   
-    Map chosenMap;
-    */
-    // there is no difficulty class, just an int
+    // Variable for when Map class is finished.
+    // Map chosenMap;
     int chosenDifficulty;
     
     // GameManager constructor.
     public GameManager()
     {
         // When the game starts, this will be called to initialize the object.
-        // The View will be set to the main menu.
-        // Difficulty and Map will be set to null to wait for input from the user.
-        /*
-        myView = (Whatever the main menu is);
-        chosenDifficulty = null;
-        chosenMap = null;
-        */
+        // Difficulty and Map will be set to placeholders to wait for input from the user.
+        // chosenMap = null;
         chosenDifficulty = -1;
     }
 
@@ -39,16 +30,17 @@ public class GameManager : MonoBehaviour
     Input: the name of the map, which matches the name stored in one of the map objects.
     Result: chosenMap is updated
     */
-    public void chooseMap(string name) {
+    public void chooseMap(string name) 
+    {
         //Map newMap;
         /*
         1) Find the map m in the array/list/vector/whatever of maps where m.getName() == name
         2) Update chosenMap with m:
 
         selectMap(newMap);
-
-        3) change the scene to LevelMenu
         */
+        // 3) change the scene to LevelMenu
+        SceneManager.LoadScene("LevelMenu");
     }
 
     /*
@@ -56,22 +48,38 @@ public class GameManager : MonoBehaviour
     Input: the level, an integer
     Result: chosenDifficulty = level
     */
-    public void chooseDifficulty(int level) {
-        if(level >= 0 && level <= 1) { // make sure is valid level
+    public void chooseDifficulty(int level) 
+    {
+        if(level >= 0 && level <= 1) { // Make sure is valid level
             chosenDifficulty = level;
+        } else
+        { // Not a valid level.
+            Console.WriteLine("Error, invalid level. Exiting . . .");
+            System.Environment.Exit(-1);
         }
 
-        // FIXME: add code to change the scene to the actual game
+        // Change scene to the game.
+        SceneManager.LoadScene("GamePage");
     }
 
-    // Changes the current difficulty to parameter d.
-    // Commented out until Difficulty class is finished.
-    /*
-    private void selectDifficulty(Difficulty d) { chosenDifficulty = d; }
-    */
+    // Loads the next scene on start menu click.
+    public void startMenuOnClick(string nextScene) 
+    {
+        SceneManager.LoadScene(nextScene);
+    }
 
-    public void startMenuOnClick(string nextScene) {
-        // FIXME: add code to change the scene to nextScene
+    // Gets the new map and changes the scene.
+    public void mapMenuOnClick(string nextScene, string mapName)
+    {
+        chooseMap(mapName);
+        SceneManager.LoadScene(nextScene);
+    }
+
+    // Gets the difficulty and changes the scene.
+    public void levelMenuOnClick(string nextScene, int level)
+    {
+        chooseDifficulty(level);
+        SceneManager.LoadScene(nextScene);
     }
 
     // Does everything the game needs to do in a single frame.
