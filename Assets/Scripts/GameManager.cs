@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     Map chosenMap;
     */
     // there is no difficulty class, just an int
-    int chosenDifficulty = -1;
+    int chosenDifficulty;
     
     // GameManager constructor.
     public GameManager()
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         chosenDifficulty = null;
         chosenMap = null;
         */
+        chosenDifficulty = -1;
     }
 
     // Changes the current map to parameter m.
