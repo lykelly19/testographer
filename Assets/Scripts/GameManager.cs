@@ -92,6 +92,8 @@ public class GameManager : MonoBehaviour
     // Required by Unity for this object.
     void Start()
     {
+        Screen.SetResolution(1920, 1080, true);  // set screen width & height
+
         // Stuff for FIRST FRAME ONLY.
     }
 
