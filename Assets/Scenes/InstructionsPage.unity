@@ -538,7 +538,7 @@ MonoBehaviour:
     Drag region names to their correct spot on the map
 
     4. Guess quickly for
-    a score bonus'
+    a score bonus!'
 --- !u!222 &346509145
 CanvasRenderer:
   m_ObjectHideFlags: 0
