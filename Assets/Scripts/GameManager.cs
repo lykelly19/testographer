@@ -68,9 +68,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(nextScene);
     }
 
+    // Quit/exit the game
     public void exitGame()
     {
-        // FIXME: add code to exit game
+        Application.Quit();
     }
 
     // Gets the new map and changes the scene.
