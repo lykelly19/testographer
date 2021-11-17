@@ -31,7 +31,7 @@ public class Score
     public Score()
     {
         currentScore = 0;
-        // Start at -1 for objects not used until calculateFinalScore.
+        // Start at -1 for variables not used until calculateFinalScore.
         originalScore = -1;
         timeBonus = -1;
         levelMultiplier = -1;
@@ -56,8 +56,10 @@ public class Score
     // level = 0 for easy, level = 1 for hard.
     public void calculateFinalScore(int timeElapsed, int level)
     {
+        // Set original score before bonus.
         originalScore = currentScore;
 
+        // Calculate level multiplier.
         if(level == 0)
         {
             levelMultiplier = 1;
@@ -70,6 +72,23 @@ public class Score
             System.Environment.Exit(-1);
         }
 
-        // timeBonus = (Equation to be added soon)
+        // Calculate time bonus.
+        double logCalc;
+        if(timeElapsed <= 1000)
+        {
+            logCalc = Math.Log(timeElapsed) * 1000;
+        } else if (timeElapsed <= 0)
+        {
+            logCalc = 0;
+        } else
+        {
+            logCalc = 3000;
+        }
+        timeBonus = (3000 - (int) logCalc) / 10;
+
+        // Calculate final score.
+        // Multiplier is applied BEFORE time bonus is added.
+        currentScore *= levelMultiplier;
+        currentScore += timeBonus;
     }
 }
