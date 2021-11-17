@@ -1651,8 +1651,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1218719186}
-        m_TargetAssemblyTypeName: ButtonReturnHome, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: changeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1218719180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8008a73dcee2aa74a995fe6c8718ad58, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1238065445
