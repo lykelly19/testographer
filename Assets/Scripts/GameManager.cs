@@ -62,10 +62,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GamePage");
     }
 
-    // Loads the next scene on start menu click.
-    public void startMenuOnClick(string nextScene) 
+    // Loads the scene passed as parameter
+    public void changeScene(string nextScene) 
     {
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void exitGame()
+    {
+        // FIXME: add code to exit game
     }
 
     // Gets the new map and changes the scene.

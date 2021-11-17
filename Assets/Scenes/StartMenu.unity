@@ -210,7 +210,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 83006545}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: startMenuOnClick
+        m_MethodName: changeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -852,7 +852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 390586570}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: startMenuOnClick
+        m_MethodName: changeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1667,7 +1667,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1675587515}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: startMenuOnClick
+        m_MethodName: changeScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
