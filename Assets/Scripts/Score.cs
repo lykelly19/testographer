@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,9 +31,10 @@ public class Score
     public Score()
     {
         currentScore = 0;
-        originalScore = 0;
-        timeBonus = 0;
-        levelMultiplier = 0;
+        // Start at -1 for objects not used until calculateFinalScore.
+        originalScore = -1;
+        timeBonus = -1;
+        levelMultiplier = -1;
     }
 
     // Changes score based on the correctness of the most recent choice.
@@ -50,8 +52,24 @@ public class Score
 
     // Derives the final score based on the amount of time
     // elapsed and the difficulty of the level.
+    // timeElapsed is in seconds.
+    // level = 0 for easy, level = 1 for hard.
     public void calculateFinalScore(int timeElapsed, int level)
     {
-        // will add very soon
+        originalScore = currentScore;
+
+        if(level == 0)
+        {
+            levelMultiplier = 1;
+        } else if (level == 1)
+        {
+            levelMultiplier = 2;
+        } else
+        {
+            Console.WriteLine("Error, invalid level in calculateFinalScore. Exiting . . .");
+            System.Environment.Exit(-1);
+        }
+
+        // timeBonus = (Equation to be added soon)
     }
 }

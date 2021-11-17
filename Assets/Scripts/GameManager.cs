@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             chosenDifficulty = level;
         } else
         { // Not a valid level.
-            Console.WriteLine("Error, invalid level. Exiting . . .");
+            Console.WriteLine("Error, invalid level in chooseDifficulty. Exiting . . .");
             System.Environment.Exit(-1);
         }
 
