@@ -1484,7 +1484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Select a map to label! Can you beat your high score?
+  m_Text: 'Your Score: originalScore x levelMultiplier + timeBonus = finalScore'
 --- !u!222 &853521263
 CanvasRenderer:
   m_ObjectHideFlags: 0
