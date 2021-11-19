@@ -6,17 +6,17 @@ public class BoxList
 {
     List<Box> boxes;
     int hlIndex; // index of currently highlighted box
-    string mapName;
+    string filePath;
 
-    public BoxList(string map)
+    public BoxList(string path)
     {
         boxes = new List<Box>();
-        mapName = map;
+        filePath = path;
         hlIndex = -1;
         populateList();
     }
 
-    // Reads map data file and populates boxes with the data
+    // Reads data from file at filePath and populates BoxList with it
     private void populateList()
     {
         System.Console.WriteLine("FIXME: BoxList.populateList() is a stub and does nothing\n");
