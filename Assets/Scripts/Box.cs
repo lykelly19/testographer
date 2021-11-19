@@ -4,47 +4,60 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
+    // DECLARATIONS
+	private float posX;
+	private float posY;
 
-	private float startPosX;
-	private float startPosY;
-	private bool isBeingHeld = false;
-    // Start is called before the first frame update
+    // GETTERS AND SETTERS
+    public float PosX
+    {
+        get
+        {
+            return posX;
+        }
+        set
+        {
+            posX = value;
+        }
+    }
+
+    public float PosY
+    {
+        get
+        {
+            return posY;
+        }
+        set
+        {
+            posY = value;
+        }
+    }
+
+    // METHODS
     
+    // give the box highlighted styling
+    public void highlight()
+    {
+        System.Console.WriteLine("FIXME: Box.highlight() is a stub and does nothing\n");
+    }
+
+    // unhighlight the box
+    public void unHighlight()
+    {
+        System.Console.WriteLine("FIXME: Box.unHighlight() is a stub and does nothing\n");
+    }
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if(isBeingHeld == true)
-        {
-        
-        	Vector3 mousePos;
-    		mousePos = Input.mousePosition;
-    		mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        
-        	this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
-        }
+       
     }
     
-    private void OnMouseDown()
-    {
-    
-    	if(Input.GetMouseButtonDown(0))
-    	{
-    	Vector3 mousePos;
-    	mousePos = Input.mousePosition;
-    	mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-    	
-    	startPosX = mousePos.x - this.transform.localPosition.x;
-    	startPosY = mousePos.y - this.transform.localPosition.y;
-    	
-    	isBeingHeld = true;
-    	}
-    }
-    
-    private void OnMouseUp()
-    {
-    
-    	isBeingHeld = false;
-    
-    }
 }
