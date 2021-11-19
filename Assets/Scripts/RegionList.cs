@@ -21,7 +21,7 @@ public class NewBehaviourScript
     }
 
     // Checks if Region has the id
-    public bool checkIdMatch(Region r, string id)
+    private bool checkIdMatch(Region r, string id)
     {
         if (r.Id == id)
         {
@@ -29,25 +29,51 @@ public class NewBehaviourScript
         }
         return false;
     }
+    
+    // sets the isMatched flag to indicate that the Region at index i has been matched
+    private void setMatched(int index, bool isMatched)
+    {
+        if(index >= 0 && index < regions.Count)
+        {
+            regions[index].IsMatched = isMatched;
+        }
+    }
 
-    /*
-     * moveToMatched (int index) => void
-     * matched.push(unmatched.at(index));
-     * unmatched.remove(index); // replace with equivalent C# functions
-     */
     /*
      * generateSidebarList() => RegionList 
      * Randomly generates a list of ten Regions and returns it
      */
-    /* 
-     * replaceRegion(RegionList sidebarList, string id) => 
-     * moveToMatched(findIdMatch(id)) to set it as matched
-     * sidebarList.findIdMatch(id) = getRandomUnmatched();
-     * Replaces its spot in sideBarList with an unmatched Region. If there’s no unmatched regions left,
-     * it simply removes the Region without replacing it, so that size--.
-     */
+
+    // Replaces marks a Region and matched and replaces it in the sidebarList. if there's no unmatched
+    // regions left, it is simply removed from sidebarList.
+    public List<string> replaceRegion(List<string> sidebarList, int index)
+    {
+        int regionIndex = findIdMatch(sidebarList[index]);
+
+        if(regionIndex >= 0 && regionIndex < regions.Count)
+        {
+            setMatched(regionIndex, true);
+
+            Region newItem = getRandomUnmatched();
+            if(newItem != null)
+            {
+                sidebarList[index] = newItem.Id;
+            } 
+            else
+            {
+                sidebarList.RemoveAt(index);
+            }
+        }
+
+        return sidebarList;
+    }
     /*
      * getRandomUnmatched() => Region
      * Picks a random item in unmatched and returns it
      * */
+    private Region getRandomUnmatched()
+    {
+        System.Console.WriteLine("FIXME: RegionList.getRandomUnmatched is incomplete and will always return null\n");
+        return null;
+    }
 }
