@@ -2,9 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript
+public class RegionList
 {
+    // DECLARATIONS
     List<Region> regions;
+    string filePath;
+
+    // METHODS
+    public RegionList(string path)
+    {
+        regions = new List<Region>();
+        filePath = path;
+        populateList();
+    }
+
+    // Reads data from file at filePath and populates RegionList with it
+    private void populateList()
+    {
+        System.Console.WriteLine("FIXME: RegionList.populateList() is a stub and does nothing\n");
+    }
 
     // Returns index of Region with matching ID
     public int findIdMatch(string id)
