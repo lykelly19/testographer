@@ -2,24 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapList
+public class BoxList
 {
     List<Box> boxes;
     int hlIndex; // index of currently highlighted box
+    string mapName;
 
-    /*
- constructor(string mapName) => BoxList
- Generates boxes from presets for each map
- Store presets elsewhere
- File? Stores data in specific format
- Based on mapName, decide which file to read from
- This way, algorithm to populate is the same every time, and we don’t have to hardcode a bunch of values and make a giant mess
- Should read from same file as RegionList to avoid contradictions
-    */
+    public BoxList(string map)
+    {
+        boxes = new List<Box>();
+        mapName = map;
+        hlIndex = -1;
+        populateList();
+    }
+
+    // Reads map data file and populates boxes with the data
+    private void populateList()
+    {
+        System.Console.WriteLine("FIXME: BoxList.populateList() is a stub and does nothing\n");
+    }
     // updates Box highlight styling based on location
     public void updateHighlight(float posX, float posY)
     {
-        boxes[hlIndex].unHighlight();
+        if (hlIndex >= 0)
+        {
+            boxes[hlIndex].unHighlight();
+        }
         int newH = findLocationMatch(posX, posY);
 
         if (newH >= 0 && newH < boxes.Count)
