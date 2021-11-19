@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapList
 {
     List<Box> boxes;
-    int highlightedIndex;
+    int hlIndex; // index of currently highlighted box
 
     /*
  constructor(string mapName) => BoxList
@@ -19,7 +19,7 @@ public class MapList
     // updates Box highlight styling based on location
     public void updateHighlight(int posX, int posY)
     {
-        boxes[highlightedIndex].unHighlight();
+        boxes[hlIndex].unHighlight();
         int newH = findLocationMatch(posX, posY);
 
         if (newH >= 0 && newH < boxes.Count)
