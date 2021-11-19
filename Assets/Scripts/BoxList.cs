@@ -17,7 +17,7 @@ public class MapList
  Should read from same file as RegionList to avoid contradictions
     */
     // updates Box highlight styling based on location
-    public void updateHighlight(int posX, int posY)
+    public void updateHighlight(float posX, float posY)
     {
         boxes[hlIndex].unHighlight();
         int newH = findLocationMatch(posX, posY);
@@ -33,12 +33,12 @@ public class MapList
      * If found: return index
      * If DNE: return -1
     */
-    private int findLocationMatch(int posX, int posY)
+    private int findLocationMatch(float posX, float posY)
     {
         for(int i = 0; i < boxes.Count; i++)
         {
-            int xDif = System.Math.Abs(posX - boxes[i].PosX);
-            int yDif = System.Math.Abs(posY - boxes[i].PosY);
+            float xDif = System.Math.Abs(posX - boxes[i].PosX);
+            float yDif = System.Math.Abs(posY - boxes[i].PosY);
 
             // Check if within certain radius
             // FIXME: pick a radius that makes sense. 0.1 was just a guess.
