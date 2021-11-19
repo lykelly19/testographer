@@ -19,4 +19,16 @@ public class Region : MonoBehaviour
             id = value;
         }
     }
+
+    public bool IsMatched
+    {
+        get
+        {
+            return isMatched;
+        }
+        set
+        {
+            isMatched = value;
+        }
+    }
 }
