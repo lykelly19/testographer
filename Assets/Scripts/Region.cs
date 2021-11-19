@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Region : MonoBehaviour
 {
-    string regionName;
+    string id;
+    bool isMatched;
     Vector2 regionCoordinates;
     
-    public string RegionName
+    public string Id
     {
         get
         {
-            return regionName;
+            return id;
         }
         set
         {
-            regionName = value;
+            id = value;
         }
     }
 }
