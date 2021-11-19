@@ -44,18 +44,18 @@ public class NewBehaviourScript
      * Randomly generates a list of ten Regions and returns it
      */
 
-    public List<string> generateSidebarList(int size)
+    public List<Region> generateSidebarList(int size)
     {
-        List<string> sidebarList = new List<string>();
+        List<Region> sidebarList = new List<Region>();
 
         while (sidebarList.Count < size)
         {
-            string newItem = getRandomUnmatchedId();
+            Region newR = getRandomUnmatched();
 
             // make sure a string was returned and that it's not a duplicate id
-            if(newItem != null && !sidebarList.Exists(s => s == newItem))
+            if(newR != null && !sidebarList.Exists(s => s.Id == newR.Id))
             {
-                sidebarList.Add(newItem);
+                sidebarList.Add(newR);
             }
         }
 
@@ -64,18 +64,18 @@ public class NewBehaviourScript
 
     // Replaces marks a Region and matched and replaces it in the sidebarList. if there's no unmatched
     // regions left, it is simply removed from sidebarList.
-    public List<string> replaceRegion(List<string> sidebarList, int index)
+    public List<Region> replaceRegion(List<Region> sidebarList, int index)
     {
-        int regionIndex = findIdMatch(sidebarList[index]);
+        int regionIndex = findIdMatch(sidebarList[index].Id);
 
         if(regionIndex >= 0 && regionIndex < regions.Count)
         {
             setMatched(regionIndex, true);
 
-            string newItem = getRandomUnmatchedId();
-            if(newItem != null)
+            Region newR = getRandomUnmatched();
+            if(newR != null)
             {
-                sidebarList[index] = newItem;
+                sidebarList[index] = newR;
             } 
             else
             {
@@ -89,11 +89,11 @@ public class NewBehaviourScript
      * getRandomUnmatched() => Region
      * Picks a random item in unmatched and returns it
      * */
-    private string getRandomUnmatchedId()
+    private Region getRandomUnmatched()
     {
         var rand = new System.Random();
 
-        List<string> unmatched = getUnmatched();
+        List<Region> unmatched = getUnmatchedList();
 
         if (unmatched == null)
         {
@@ -105,15 +105,15 @@ public class NewBehaviourScript
         return unmatched[index];
     }
 
-    private List<string> getUnmatched()
+    private List<Region> getUnmatchedList()
     {
-        List<string> unmatched = new List<string>();
+        List<Region> unmatched = new List<Region>();
 
         for(int i = 0; i < regions.Count; i++)
         {
             if (!regions[i].IsMatched)
             {
-                unmatched.Add(regions[i].Id);
+                unmatched.Add(regions[i]);
             }
         }
 
