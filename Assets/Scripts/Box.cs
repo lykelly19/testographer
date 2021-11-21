@@ -5,10 +5,22 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     // DECLARATIONS
+    private string id;
 	private float posX;
 	private float posY;
 
     // GETTERS AND SETTERS
+    public string Id
+    {
+        get
+        {
+            return id;
+        }
+        set
+        {
+            id = value;
+        }
+    }
     public float PosX
     {
         get
