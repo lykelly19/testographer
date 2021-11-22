@@ -92,7 +92,32 @@ public class GameManager : MonoBehaviour
     void playGame()
     {
         // Game stuff
+
+
+        // code structure for checking high score & displaying message
+        /*
+        bool isHighScore;
+
+        // check if high score
+        if(currentScore > chosenMap.HighScore) {
+            isHighScore = true;
+        }
+
+        if(isHighScore) {
+            chosenMap.updateHighScore(); 
+            displayHighScoreMessage();
+        }
+        */
     }
+
+    // displaying the high score message (code structure)
+    /*
+    public void displayHighScoreMesssage(GameObject highScoreObj) 
+    {
+        obj.SetActive(true);
+    }
+    */
+
 
     // Start is called before the first frame update.
     // Required by Unity for this object.
