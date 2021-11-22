@@ -161,8 +161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0178, y: -0.67}
-  m_SizeDelta: {x: 606.6907, y: 62.7419}
+  m_AnchoredPosition: {x: -0.017795, y: -1.5628}
+  m_SizeDelta: {x: 606.6907, y: 133.2957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83006542
 MonoBehaviour:
@@ -713,8 +713,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 7.06}
+  m_SizeDelta: {x: 0, y: -14.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254234260
 MonoBehaviour:
@@ -749,7 +749,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Europe
+  m_Text: 'Europe
+
+    High Score: '
 --- !u!222 &254234261
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -829,7 +831,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: United States
+  m_Text: 'United States
+
+    High Score: '
 --- !u!222 &259886150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1040,8 +1044,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0178, y: 0.29}
-  m_SizeDelta: {x: 603.1423, y: 62.7419}
+  m_AnchoredPosition: {x: -0.0178, y: -0.0345}
+  m_SizeDelta: {x: 603.1423, y: 127.6514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390586567
 MonoBehaviour:
@@ -1603,7 +1607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.017795, y: -1.69}
+  m_AnchoredPosition: {x: -0.017795, y: -2.76}
   m_SizeDelta: {x: 606.6907, y: 62.7419}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218719183
