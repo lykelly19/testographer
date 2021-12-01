@@ -5,43 +5,32 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     // DECLARATIONS
-    public string id;
-	private float posX;
-	private float posY;
+    // id is the Box.name
+	private float x;
+	private float y;
 
     // GETTERS AND SETTERS
-    public string Id
+    public float X
     {
         get
         {
-            return id;
+            return x;
         }
         set
         {
-            id = value;
-        }
-    }
-    public float PosX
-    {
-        get
-        {
-            return posX;
-        }
-        set
-        {
-            posX = value;
+            x = value;
         }
     }
 
-    public float PosY
+    public float Y
     {
         get
         {
-            return posY;
+            return y;
         }
         set
         {
-            posY = value;
+            y = value;
         }
     }
 

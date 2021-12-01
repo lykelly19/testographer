@@ -39,7 +39,7 @@ public class Score
 
     // Changes score based on the correctness of the most recent choice.
     // +50 points if correct, -25 if incorrect.
-    public void changeScore(bool isRight)
+    public void updateScore(bool isRight)
     {
         if (isRight)
         {

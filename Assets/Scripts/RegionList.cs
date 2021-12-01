@@ -7,13 +7,15 @@ public class RegionList
     // DECLARATIONS
     List<Region> regions;
     string filePath;
+    System.Action<string, Vector2> isDroppedCallback;
 
     // METHODS
-    public RegionList(string path)
+    public RegionList(string path, System.Action<string, Vector2> isDropped)
     {
         regions = new List<Region>();
         filePath = path;
         populateList();
+        isDroppedCallback = isDropped;
     }
 
     // Reads data from file at filePath and populates RegionList with it
@@ -31,7 +33,7 @@ public class RegionList
                 {
                     // DELETE ME: testing info print statement
                     System.Console.WriteLine("dataString: {0}\n", dataString);
-                    regions.Add(new Region() { Id = dataString, IsMatched = false });
+                    regions.Add(new Region() { Id = dataString, IsMatched = false, IsDroppedCallback = isDroppedCallback });
                 }
             }
         }
