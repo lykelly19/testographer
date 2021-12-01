@@ -1,50 +1,50 @@
-Maine 7.19 3.42
-New Hampshire 6.27 3.32
-Vermont 5.16 3.21
-Massachusetts 7.86 2.79
-New York 6.27 2.26
-Rhode Island 7.86 2.21
-Connecticut 7.75 1.76
-Pennsylvania 5.82 1.65
-New Jersey 7.5 1.12
-Delaware 7.5 0.52
-Maryland 7.46 -0.2
-West Virginia 5.37 0.9
-Virginia 5.89 0.52
-Ohio 4.78 1.34
-Michigan 4.28 2.62
-Indiana 4.09 0.91
-Illinois 3.3 1.18
-Wisconsin 2.91 2.45 
-Iowa 2.09 1.63
-Minnesota 2.02 2.99
-North Dakota 0.6723 3.353
-South Dakota 0.77 2.39
-Montana -1.01 3.31
-Wyoming -0.89 2.06
-Idaho -2.17 2.37
-Oregon -3.49 2.92
-Washington -3.13 3.77
-California -3.93 0.65
-Nevada -3.04 1.39
-Utah -1.88 0.93
-Arizona -2.02 -0.53
-Colorado -0.48 0.75
-New Mexico -0.74 -0.64
-Kansas 1.06 0.49
-Oklahoma 1.35 -0.41
-Texas 0.88 -1.52
-Missouri 2.58 0.4
-Arkansas 2.6 -0.54
-Louisiana 2.74 -1.92
-Mississippi 3.4 -1.07
-Alabama 4.18 -1.41
-Georgia 4.98 -1.12
-Florida 5.53 -2.42
-Tennessee 3.94 -0.23
-North Carolina 5.86 -0.05
-South Carolina 5.49 -0.59
-Kentucky 4.28 0.28
-Alaska -1.59 -2.9
-Hawaii -4.4 -2.65
-Nebraska 0.82 1.45
+Maine
+New Hampshire
+Vermont
+Massachusetts
+New York
+Rhode Island
+Connecticut
+Pennsylvania
+New Jersey
+Delaware
+Maryland
+West Virginia
+Virginia
+Ohio
+Michigan
+Indiana
+Illinois
+Wisconsin
+Iowa
+Minnesota
+North Dakota
+South Dakota
+Montana
+Wyoming
+Idaho
+Oregon
+Washington
+California
+Nevada
+Utah
+Arizona
+Colorado
+New Mexico
+Kansas
+Oklahoma
+Texas
+Missouri
+Arkansas
+Louisiana
+Mississippi
+Alabama
+Georgia
+Florida
+Tennessee
+North Carolina
+South Carolina
+Kentucky
+Alaska
+Hawaii
+Nebraska
