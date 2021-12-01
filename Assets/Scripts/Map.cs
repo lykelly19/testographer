@@ -8,6 +8,7 @@ public class Map : MonoBehaviour
     int highScore = 0;
 
     RegionList regions;
+    List<Region> sidebarList;
     BoxList boxes;
     Score score;
     Timer timer;
@@ -22,6 +23,7 @@ public class Map : MonoBehaviour
         string sFilePath = System.IO.Path.GetFullPath(sFile);
 
         regions = new RegionList(sFilePath);
+        sidebarList = regions.generateSidebarList(10);
         boxes = new BoxList();
         score = new Score();
         timer = new Timer();
