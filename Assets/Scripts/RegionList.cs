@@ -171,4 +171,14 @@ public class RegionList
 
         return -1;
     }
+
+    // Resets RegionList back to it's initial state.
+    public void reset(string path)
+    {
+        // Sets every regions IsMatched to false.
+        for(int i = 0; i < regions.Count; i++)
+        {
+            regions[i].IsMatched = false;
+        }
+    }
 }

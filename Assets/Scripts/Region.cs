@@ -5,7 +5,7 @@ using UnityEngine;
 public class Region : MonoBehaviour
 {
     string id;
-    bool isMatched;
+    bool isMatched = false;
     Vector2 regionCoordinates;
     System.Action<string, Vector2> isDroppedCallback;
 
