@@ -57,4 +57,12 @@ public class BoxList
         return -1;
     }
 
+    // Resets Boxlist back to its original state.
+    public void reset()
+    {
+        // C# handles memory destruction for us, dont need to worry about old list.
+        boxes = new List<Box>();
+        hlIndex = -1;
+        populateList();
+    }
 }
