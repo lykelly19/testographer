@@ -6,12 +6,10 @@ public class BoxList
 {
     List<Box> boxes;
     int hlIndex; // index of currently highlighted box
-    string filePath;
 
-    public BoxList(string path)
+    public BoxList()
     {
         boxes = new List<Box>();
-        filePath = path;
         hlIndex = -1;
         populateList();
     }
@@ -19,29 +17,7 @@ public class BoxList
     // Reads data from file at filePath and populates BoxList with it
     private void populateList()
     {
-        System.Console.WriteLine("FIXME: BoxList.populateList() is untested!\n");
-
-        if (!System.IO.File.Exists(filePath))
-        {
-            // Open the file to read from.
-            using (System.IO.StreamReader sr = System.IO.File.OpenText(filePath))
-            {
-                string dataString;
-                while ((dataString = sr.ReadLine()) != null)
-                {
-                    string[] data = dataString.Split();
-                    // DELETE ME: testing info print statement
-                    System.Console.WriteLine("data[0]: {0}; data[1]: {1}; data[2]: {2}\n", data[0], data[1], data[3]);
-
-                    if (data.Length == 3)
-                    {
-                        boxes.Add(new Box() { Id = data[0], PosX = float.Parse(data[1]), PosY = float.Parse(data[2]) });
-                    }
-                }
-            }
-        }
-
-        
+        System.Console.WriteLine("FIXME: BoxList.populateList() does nothing!\n");
     }
     // updates Box highlight styling based on location
     public void updateHighlight(float posX, float posY)
