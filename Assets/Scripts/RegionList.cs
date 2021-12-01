@@ -29,14 +29,9 @@ public class RegionList
                 string dataString;
                 while ((dataString = sr.ReadLine()) != null)
                 {
-                    string[] data = dataString.Split();
                     // DELETE ME: testing info print statement
-                    System.Console.WriteLine("data[0]: {0}; data[1]: {1}; data[2]: {2}\n", data[0], data[1], data[3]);
-
-                    if (data.Length == 3)
-                    {
-                        regions.Add(new Region() { Id = data[0], IsMatched = false });
-                    }
+                    System.Console.WriteLine("dataString: {0}\n", dataString);
+                    regions.Add(new Region() { Id = dataString, IsMatched = false });
                 }
             }
         }
