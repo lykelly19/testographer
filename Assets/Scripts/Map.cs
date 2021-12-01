@@ -12,7 +12,7 @@ public class Map : MonoBehaviour
     BoxList boxes;
     Score score;
     Timer timer;
-
+    System.Action<string, Vector2> isDroppedCallback;
 
     // CONSTRUCTOR
     public Map(string name)
@@ -24,11 +24,46 @@ public class Map : MonoBehaviour
         string sFile = System.IO.Path.Combine(sCurrentDirectory, string.Format(@"..\\Resources\\MapData\\{0}.txt", name));
         string sFilePath = System.IO.Path.GetFullPath(sFile);
 
-        regions = new RegionList(sFilePath);
+        regions = new RegionList(sFilePath, isDroppedCallback);
         sidebarList = regions.generateSidebarList(10);
         boxes = new BoxList();
         score = new Score();
         timer = new Timer();
+
+        isDroppedCallback = (string id, Vector2 location) =>
+        {
+            string match = boxes.findBoxMatch(location);
+
+            if (match == null)
+            {
+                // FIXME: send box back to sidebar
+            }
+            else if (match == id)
+            {
+                // update score
+                score.updateScore(true);
+
+                // replace with unmatched region
+                int index = -1;
+                for (int i = 0; i < sidebarList.Count; i++)
+                {
+                    if (sidebarList[i].Id == id)
+                    {
+                        index = i;
+                    }
+                }
+                regions.replaceRegion(sidebarList, index);
+
+                // check if game is over & end it if so
+            }
+            else
+            {
+                score.updateScore(false);
+
+                // FIXME: send box back to sidebar
+            }
+        };
+
     }
 
     // GETTERS AND SETTERS
@@ -59,24 +94,7 @@ public class Map : MonoBehaviour
     }
 
     // METHODS
-    /*
-     * isDropped(string id, location) => void
-     * String match = BoxList.findLocationMatch(location);
-     * If (match == id)
-     * If true: update score; regions.replaceRegion(); 
-     * Since replaceRegion() replaced the Region at the appropriate spot in the list with a different one with a different location, this will hopefully also make the new Region appear and old Region disappear. If not, add functionality to do that.
-     * // end game if all regions are matched
-     * Else if (match == NULL): send label back to sidebar (animate sliding motion)
-     * Else: update score; send label back to sidebar (animate sliding motion)
-
-     * */
-
-    public void isDropped(Vector2 location)
-    {
-        //string match = boxes.findBoxMatch(location);
-
-    }
-
+    
     public void reset()
     {
         mapName = "Map";
