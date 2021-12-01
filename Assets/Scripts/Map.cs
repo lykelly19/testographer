@@ -76,4 +76,10 @@ public class Map : MonoBehaviour
         //string match = boxes.findBoxMatch(location);
 
     }
+
+    public void reset()
+    {
+        mapName = "Map";
+        highScore = 0;
+    }
 }
