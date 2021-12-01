@@ -7,6 +7,26 @@ public class Map : MonoBehaviour
     string mapName = "Map";
     int highScore = 0;
 
+    RegionList regions;
+    BoxList boxes;
+    Score score;
+    Timer timer;
+
+    public Map(string name)
+    {
+        mapName = name;
+
+        // use the name to get the file path
+        string sCurrentDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
+        string sFile = System.IO.Path.Combine(sCurrentDirectory, string.Format(@"..\\Resources\\MapData\\{0}.txt", name));
+        string sFilePath = System.IO.Path.GetFullPath(sFile);
+
+        regions = new RegionList(sFilePath);
+        boxes = new BoxList();
+        score = new Score();
+        timer = new Timer();
+    }
+
     public string MapName
     {
         get
@@ -31,10 +51,5 @@ public class Map : MonoBehaviour
         {
             highScore = value;
         }
-    }
-
-    void updateHighScore(int score)
-    {
-        highScore = score;
     }
 }
