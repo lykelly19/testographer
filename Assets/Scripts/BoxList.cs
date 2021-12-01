@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BoxList
 {
-    List<Box> boxes;
+    Box[] boxes;
     int hlIndex; // index of currently highlighted box
 
     public BoxList()
     {
-        boxes = new List<Box>();
         hlIndex = -1;
         populateList();
     }
@@ -17,7 +16,16 @@ public class BoxList
     // Reads data from file at filePath and populates BoxList with it
     private void populateList()
     {
-        System.Console.WriteLine("FIXME: BoxList.populateList() does nothing!\n");
+        // each box has a public id
+        Box[] boxes = Object.FindObjectsOfType<Box>();
+
+        // retrieve the location of each box
+        foreach (Box b in boxes)
+        {
+            b.X = b.transform.position.x;
+            b.Y = b.transform.position.y;
+        }
+
     }
     // updates Box highlight styling based on location
     public void updateHighlight(float posX, float posY)
@@ -28,7 +36,7 @@ public class BoxList
         }
         int newH = findLocationMatch(posX, posY);
 
-        if (newH >= 0 && newH < boxes.Count)
+        if (newH >= 0 && newH < boxes.Length)
         {
             boxes[newH].highlight();
         }
@@ -41,10 +49,10 @@ public class BoxList
     */
     private int findLocationMatch(float posX, float posY)
     {
-        for(int i = 0; i < boxes.Count; i++)
+        for(int i = 0; i < boxes.Length; i++)
         {
-            float xDif = System.Math.Abs(posX - boxes[i].PosX);
-            float yDif = System.Math.Abs(posY - boxes[i].PosY);
+            float xDif = System.Math.Abs(posX - boxes[i].X);
+            float yDif = System.Math.Abs(posY - boxes[i].Y);
 
             // Check if within certain radius
             // FIXME: pick a radius that makes sense. 0.1 was just a guess.
@@ -61,9 +69,9 @@ public class BoxList
     {
         int index = findLocationMatch(position.x, position.y);
 
-        if(index >= 0 && index < boxes.Count)
+        if(index >= 0 && index < boxes.Length)
         {
-            return boxes[index].Id;
+            return boxes[index].name;
         }
 
         return null;
@@ -73,7 +81,7 @@ public class BoxList
     public void reset()
     {
         // C# handles memory destruction for us, dont need to worry about old list.
-        boxes = new List<Box>();
+        boxes = System.Array.Empty<Box>();
         hlIndex = -1;
         populateList();
     }
