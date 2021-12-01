@@ -9,10 +9,16 @@ public class Timer : MonoBehaviour
 
 public Text timerText;
 private float startTime;
+
+    // resets the timer so counting can start again
+    private void Reset()
+    {
+        startTime = Time.time;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        startTime = Time.time;
+        Reset();
     }
 
     // Update is called once per frame
