@@ -33,8 +33,14 @@ public class Map : MonoBehaviour
         }
     }
 
-    void updateHighScore(int score)
+    public void updateHighScore(int score)
     {
         highScore = score;
+    }
+
+    public void reset()
+    {
+        mapName = "Map";
+        highScore = 0;
     }
 }
