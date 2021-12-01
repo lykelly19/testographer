@@ -5,7 +5,7 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     // DECLARATIONS
-    private string id;
+    public string id;
 	private float posX;
 	private float posY;
 
