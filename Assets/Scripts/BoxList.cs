@@ -57,4 +57,16 @@ public class BoxList
         return -1;
     }
 
+    public string findBoxMatch(Vector2 position)
+    {
+        int index = findLocationMatch(position.x, position.y);
+
+        if(index >= 0 && index < boxes.Count)
+        {
+            return boxes[index].Id;
+        }
+
+        return null;
+    }
+
 }
