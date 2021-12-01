@@ -13,6 +13,8 @@ public class Map : MonoBehaviour
     Score score;
     Timer timer;
 
+
+    // CONSTRUCTOR
     public Map(string name)
     {
         mapName = name;
@@ -29,6 +31,7 @@ public class Map : MonoBehaviour
         timer = new Timer();
     }
 
+    // GETTERS AND SETTERS
     public string MapName
     {
         get
@@ -53,5 +56,24 @@ public class Map : MonoBehaviour
         {
             highScore = value;
         }
+    }
+
+    // METHODS
+    /*
+     * isDropped(string id, location) => void
+     * String match = BoxList.findLocationMatch(location);
+     * If (match == id)
+     * If true: update score; regions.replaceRegion(); 
+     * Since replaceRegion() replaced the Region at the appropriate spot in the list with a different one with a different location, this will hopefully also make the new Region appear and old Region disappear. If not, add functionality to do that.
+     * // end game if all regions are matched
+     * Else if (match == NULL): send label back to sidebar (animate sliding motion)
+     * Else: update score; send label back to sidebar (animate sliding motion)
+
+     * */
+
+    public void isDropped(Vector2 location)
+    {
+        //string match = boxes.findBoxMatch(location);
+
     }
 }
