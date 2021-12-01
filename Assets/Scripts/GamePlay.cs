@@ -46,7 +46,6 @@ public class GamePlay : MonoBehaviour
         go1.transform.position = new Vector2(xPos, yPos);
         go1.transform.localScale = new Vector3(1.98f, 0.37f, 0.59f);
 
-
         // Canvas
         Canvas myCanvas; 
         GameObject myGO;
@@ -84,9 +83,9 @@ public class GamePlay : MonoBehaviour
         text.font = labelFont;
 
         myText.GetComponent<RectTransform>().localScale = new Vector3(0.01f, 0.01f, 0.01f);
+
+        go1.AddComponent<DragAndDrop>();  // add the DragAndDrop script to the Region Label GameObject
     }
-
-
 
     // Update is called once per frame
     void Update()
