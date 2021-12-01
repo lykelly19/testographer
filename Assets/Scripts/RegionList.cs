@@ -109,11 +109,11 @@ public class RegionList
             setMatched(regionIndex, true);
 
             Region newR = getRandomUnmatched();
-            if(newR != null)
+            if(newR != null && findIdMatch(sidebarList, newR.Id) == -1)
             {
                 sidebarList[index] = newR;
             } 
-            else
+            else if (newR == null)
             {
                 sidebarList.RemoveAt(index);
             }
@@ -159,5 +159,19 @@ public class RegionList
         }
 
         return unmatched;
+    }
+
+    // Returns index of Region with matching ID
+    public int findIdMatch(List<Region> sidebarList, string id)
+    {
+        for (int i = 0; i < regions.Count; i++)
+        {
+            if (checkIdMatch(regions[i], id))
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }
