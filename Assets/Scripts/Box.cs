@@ -39,26 +39,35 @@ public class Box : MonoBehaviour
     // give the box highlighted styling
     public void highlight()
     {
-        System.Console.WriteLine("FIXME: Box.highlight() is a stub and does nothing\n");
+        GetComponent<Renderer>().material.color = Color.red;
     }
 
     // unhighlight the box
     public void unHighlight()
     {
-        System.Console.WriteLine("FIXME: Box.unHighlight() is a stub and does nothing\n");
+        GetComponent<Renderer>().material.color = Color.white;
+    }
+
+    // on mouse over, highlight the box
+    void OnMouseOver()
+    {
+        highlight();
+    }
+
+    void OnMouseExit()
+    {
+        unHighlight();
     }
 
     // Start is called before the first frame update
     private void Start()
     {
-        
+        BoxCollider2D boxCollider = gameObject.AddComponent<BoxCollider2D>();
     }
-
 
     // Update is called once per frame
     void Update()
     {
-       
     }
     
 }
