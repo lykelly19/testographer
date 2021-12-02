@@ -34,9 +34,7 @@ public class Map : MonoBehaviour
         level = difficulty;
 
         // use the name to get the file path
-        string sCurrentDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
-        string sFile = System.IO.Path.Combine(sCurrentDirectory, string.Format(@"..\\Resources\\MapData\\{0}.txt", name));
-        string sFilePath = System.IO.Path.GetFullPath(sFile);
+        string sFilePath = System.IO.Path.Combine(Application.dataPath, string.Format(@"../Resources/MapData/{0}.txt", name));
 
         regions = new RegionList(sFilePath, isDroppedCallback);
         sidebarList = regions.generateSidebarList(10);
