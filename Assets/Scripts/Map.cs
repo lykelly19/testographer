@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    string mapName = "Map";
+    string mapName = null;
     int highScore = 0;
 
     RegionList regions;
     List<Region> sidebarList;
     BoxList boxes;
-    Score score;
+    public Score score;
     Timer timer;
     System.Action<string, Vector2> isDroppedCallback;
 
@@ -27,18 +27,12 @@ public class Map : MonoBehaviour
         regions = new RegionList(sFilePath, isDroppedCallback);
         sidebarList = regions.generateSidebarList(10);
         boxes = new BoxList();
-        score = new Score();
-        timer = new Timer();
 
         isDroppedCallback = (string id, Vector2 location) =>
         {
             string match = boxes.findBoxMatch(location);
 
-            if (match == null)
-            {
-                // FIXME: send box back to sidebar
-            }
-            else if (match == id)
+            if (match == id)
             {
                 // update score
                 score.updateScore(true);
@@ -54,13 +48,14 @@ public class Map : MonoBehaviour
                 }
                 regions.replaceRegion(sidebarList, index);
 
-                // check if game is over & end it if so
+                // check if game is over & end it if so:
+                // calculate final score (call function)
+                // update high score
+                // move to end page
             }
             else
             {
                 score.updateScore(false);
-
-                // FIXME: send box back to sidebar
             }
         };
 
@@ -94,10 +89,20 @@ public class Map : MonoBehaviour
     }
 
     // METHODS
+
+    public void populate()
+    {
+        boxes.populateList();
+        Timer[] timers = Object.FindObjectsOfType<Timer>();
+        timer = timers[0];
+        Score[] scores = Object.FindObjectsOfType<Score>();
+        score = scores[0];
+    }
     
     public void reset()
     {
-        mapName = "Map";
-        highScore = 0;
+        regions.reset();
+        boxes.reset();
+        mapName = null;
     }
 }

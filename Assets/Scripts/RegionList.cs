@@ -138,6 +138,14 @@ public class RegionList
         return unmatched[index];
     }
 
+    public bool areAllMatched()
+    {
+        if(getUnmatchedList() == null)
+        {
+            return true;
+        }
+        return false;
+    }
     private List<Region> getUnmatchedList()
     {
         List<Region> unmatched = new List<Region>();
@@ -173,7 +181,7 @@ public class RegionList
     }
 
     // Resets RegionList back to it's initial state.
-    public void reset(string path)
+    public void reset()
     {
         // Sets every regions IsMatched to false.
         for(int i = 0; i < regions.Count; i++)

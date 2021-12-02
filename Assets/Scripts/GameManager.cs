@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // Variable for when Map class is finished.
     // Map chosenMap;
     int chosenDifficulty;
+    Map currentMap;
     
     // GameManager constructor.
     public GameManager()
@@ -16,6 +17,10 @@ public class GameManager : MonoBehaviour
         // When the game starts, this will be called to initialize the object.
         // Difficulty and Map will be set to placeholders to wait for input from the user.
         // chosenMap = null;
+
+        // FIXME: ADD CODE TO CREATE MAP
+        currentMap = new Map("UnitedStates");
+
         chosenDifficulty = -1;
     }
 
@@ -30,16 +35,9 @@ public class GameManager : MonoBehaviour
     Input: the name of the map, which matches the name stored in one of the map objects.
     Result: chosenMap is updated
     */
-    public void chooseMap(string name) 
+    public void chooseMap() 
     {
-        //Map newMap;
-        /*
-        1) Find the map m in the array/list/vector/whatever of maps where m.getName() == name
-        2) Update chosenMap with m:
-
-        selectMap(newMap);
-        */
-        // 3) change the scene to LevelMenu
+        // change the scene to LevelMenu
         SceneManager.LoadScene("LevelMenu");
     }
 
@@ -60,6 +58,9 @@ public class GameManager : MonoBehaviour
 
         // Change scene to the game.
         SceneManager.LoadScene("GamePage");
+
+        // populate BoxList
+        currentMap.populate();
     }
 
     // Loads the scene passed as parameter
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
     // Gets the new map and changes the scene.
     public void mapMenuOnClick(string nextScene, string mapName)
     {
-        chooseMap(mapName);
+        chooseMap();
         SceneManager.LoadScene(nextScene);
     }
 
