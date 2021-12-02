@@ -11,10 +11,12 @@ public Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
-     int originalScore = 0;
-     int levelMultiplier = 1;
-     int timeBonus = 0;
-     int finalScore = 0;
+     Map tempMap = GameManager.currentMap;
+     Score tempScore = tempMap.score;
+     int originalScore = tempScore.originalScore;
+     int levelMultiplier = tempScore.levelMultiplier;
+     int timeBonus = tempScore.timeBonus;
+     int finalScore = tempScore.currentScore;
      scoreText.text = "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + finalScore;   
     }
 }
