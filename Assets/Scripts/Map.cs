@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Map : MonoBehaviour
 {
     string mapName = null;
-    int highScore = 0;
+    public int highScore = 0;
     int level;
     public int Level
     {

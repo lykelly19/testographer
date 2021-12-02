@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     // Variable for when Map class is finished.
     // Map chosenMap;
     int chosenDifficulty;
-    Map currentMap;
+     public static Map currentMap;
     
     // GameManager constructor.
     public GameManager()

@@ -9,7 +9,8 @@ public class DisplayUSHighScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     int USHighScore = 0;
+     Map tempMap = GameManager.currentMap;
+     int USHighScore = tempMap.HighScore;
      scoreText.text = "United States\nHigh Score: " + USHighScore;
     }
 }
