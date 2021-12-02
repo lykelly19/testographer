@@ -40,7 +40,7 @@ public class Map : MonoBehaviour
 
         regions = new RegionList(sFilePath, isDroppedCallback);
         sidebarList = regions.generateSidebarList(10);
-        boxes = new BoxList();
+        boxes = new BoxList(level);
 
         isDroppedCallback = (string id, Vector2 location) =>
         {
@@ -50,6 +50,9 @@ public class Map : MonoBehaviour
             {
                 // update score
                 score.updateScore(true);
+
+                // update box label
+                boxes.updateBoxLabel(id);
 
                 // replace with unmatched region
                 int index = -1;

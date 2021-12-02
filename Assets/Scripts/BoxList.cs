@@ -6,11 +6,24 @@ public class BoxList
 {
     Box[] boxes;
     int hlIndex; // index of currently highlighted box
+    int level;
+    public int Level
+    {
+        get
+        {
+            return level;
+        }
+        set
+        {
+            level = value;
+        }
+    }
 
-    public BoxList()
+    public BoxList(int difficulty)
     {
         hlIndex = -1;
         populateList();
+        level = difficulty;
     }
 
     // Reads data from file at filePath and populates BoxList with it
@@ -24,6 +37,7 @@ public class BoxList
         {
             b.X = b.transform.position.x;
             b.Y = b.transform.position.y;
+            b.Level = level;
         }
 
     }
@@ -39,6 +53,21 @@ public class BoxList
         if (newH >= 0 && newH < boxes.Length)
         {
             boxes[newH].highlight();
+        }
+    }
+
+    // Function is called when a match happens.
+    // If so, this will update the box's label so
+    // it will display the full name of the region.
+    public void updateBoxLabel(string name)
+    {
+        for(int i = 0; i < boxes.Length; i++)
+        {
+            if(boxes[i].name == name)
+            {
+                boxes[i].Label = boxes[i].name;
+                break;
+            }
         }
     }
 
@@ -80,7 +109,6 @@ public class BoxList
     // Resets Boxlist back to its original state.
     public void reset()
     {
-        // C# handles memory destruction for us, dont need to worry about old list.
         boxes = System.Array.Empty<Box>();
         hlIndex = -1;
         populateList();

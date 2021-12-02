@@ -15,6 +15,6 @@ public class CurrentMap : MonoBehaviour
 
     // private bool guessRegion(string name, Point position) {}
     // private Score changeScore(bool guessCorrect) {}
-    // private Score timerExpired() {}
+    // private Score timerExpired() {
 
 }
