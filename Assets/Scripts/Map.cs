@@ -7,7 +7,8 @@ public class Map : MonoBehaviour
 {
     string mapName = null;
     int highScore = 0;
-    public int level
+    int level;
+    public int Level
     {
         get
         {

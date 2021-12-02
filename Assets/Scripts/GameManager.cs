@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         // Change scene to the game.
         SceneManager.LoadScene("GamePage");
 
-        currentMap.level = chosenDifficulty;
+        currentMap.Level = chosenDifficulty;
         // populate BoxList
         currentMap.populate();
     }
