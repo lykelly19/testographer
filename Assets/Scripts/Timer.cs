@@ -21,6 +21,12 @@ private float startTime;
         Reset();
     }
 
+    // get the current number of elapsed seconds
+    public float getElapsedSeconds()
+    {
+        return Time.time - startTime;
+    }
+
     // Update is called once per frame
     void Update()
     {

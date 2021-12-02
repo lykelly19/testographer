@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         // chosenMap = null;
 
         // FIXME: ADD CODE TO CREATE MAP
-        currentMap = new Map("UnitedStates");
+        currentMap = new Map("UnitedStates", -1);
 
         chosenDifficulty = -1;
     }
@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         // Change scene to the game.
         SceneManager.LoadScene("GamePage");
 
+        currentMap.level = chosenDifficulty;
         // populate BoxList
         currentMap.populate();
     }

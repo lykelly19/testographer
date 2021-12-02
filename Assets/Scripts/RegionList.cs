@@ -138,7 +138,7 @@ public class RegionList
         return unmatched[index];
     }
 
-    public bool areAllMatched()
+    public bool checkAllMatched()
     {
         if(getUnmatchedList() == null)
         {

@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Map : MonoBehaviour
 {
     string mapName = null;
     int highScore = 0;
+    public int level
+    {
+        get
+        {
+            return level;
+        }
+        set
+        {
+            level = value;
+        }
+    }
 
     RegionList regions;
     List<Region> sidebarList;
@@ -15,9 +27,10 @@ public class Map : MonoBehaviour
     System.Action<string, Vector2> isDroppedCallback;
 
     // CONSTRUCTOR
-    public Map(string name)
+    public Map(string name, int difficulty)
     {
         mapName = name;
+        level = difficulty;
 
         // use the name to get the file path
         string sCurrentDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
@@ -49,9 +62,21 @@ public class Map : MonoBehaviour
                 regions.replaceRegion(sidebarList, index);
 
                 // check if game is over & end it if so:
-                // calculate final score (call function)
-                // update high score
-                // move to end page
+                if (regions.checkAllMatched())
+                {
+                    // calculate final score
+                    float elapsedSeconds = timer.getElapsedSeconds();
+                    score.calculateFinalScore((int)elapsedSeconds, level);
+
+                    // update high score
+                    if (score.currentScore > highScore)
+                    {
+                        highScore = score.currentScore;
+                    }
+
+                    // move to end page
+                    SceneManager.LoadScene("EndMenu");
+                }
             }
             else
             {
