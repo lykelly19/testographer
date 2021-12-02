@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score
+public class Score : MonoBehaviour
 {
     // Variables with get and set functions.
     public int currentScore 

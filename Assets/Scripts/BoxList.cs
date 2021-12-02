@@ -14,7 +14,7 @@ public class BoxList
     }
 
     // Reads data from file at filePath and populates BoxList with it
-    private void populateList()
+    public void populateList()
     {
         // each box has a public id
         Box[] boxes = Object.FindObjectsOfType<Box>();
