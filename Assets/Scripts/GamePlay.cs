@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // incorporate this code to GameManager?
 
@@ -10,9 +11,15 @@ public class GamePlay : MonoBehaviour
     public Camera mainCamera;
     public Font labelFont;
 
+    public int highScore = 0;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
+
         float[] yPosArr = new float[] { 3.16f, 2.38f, 1.57f, 0.73f, -0.06f, -0.87f, -1.69f, -2.51f, -3.35f, -4.14f };
         string[] yPosArr2 = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
         
@@ -23,7 +30,26 @@ public class GamePlay : MonoBehaviour
         for(int i=0; i<10; i++) {
             createRegionLabelObject(yPosArr2[i], allText[i], -7.27f, yPosArr[i]);
         }
+
+
+
+
+
+
+
     }
+
+
+
+
+    // public void populate()
+    // {
+    //     boxes.populateList();
+    //     Timer[] timers = Object.FindObjectsOfType<Timer>();
+    //     timer = timers[0];
+    //     Score[] scores = Object.FindObjectsOfType<Score>();
+    //     score = scores[0];
+    // }
 
 
     void createRegionLabelObject(string gameObjectName, string displayText, float xPos, float yPos) {
