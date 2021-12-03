@@ -7,6 +7,7 @@ public class BoxList
     Box[] boxes;
     int hlIndex; // index of currently highlighted box
     int level;
+    // FIXME: list of key-value pairs with id as the key and abbreviation as the value
 
     public int Level
     {

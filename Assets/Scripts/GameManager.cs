@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;  // for changing scenes
 
 
@@ -9,7 +10,18 @@ public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
     int chosenDifficulty;
-    
+    Map currentMap;
+    Score score;
+    public Text endScoreText;
+
+    public Map CurrentMap
+    {
+        get
+        {
+            return currentMap;
+        }
+    }
+
     // GameManager constructor.
     public GameManager()
     {
@@ -79,6 +91,9 @@ public class GameManager : MonoBehaviour
         // Change scene to the game.
         SceneManager.LoadScene("GamePage");
 
+        // score = FindObjectsOfType<Score>()[0];
+        currentMap = FindObjectsOfType<Map>()[0];
+
         // Game stuff
 
 
@@ -96,6 +111,15 @@ public class GameManager : MonoBehaviour
             displayHighScoreMessage();
         }
         */
+    }
+
+    public void displayEndScore()
+    {
+        int originalScore = score.OriginalScore;
+        int levelMultiplier = score.LevelMultiplier;
+        int timeBonus = score.TimeBonus;
+        int finalScore = score.CurrentScore;
+        endScoreText.text = "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + finalScore;
     }
 
     // displaying the high score message (code structure)
