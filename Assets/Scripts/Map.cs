@@ -12,7 +12,7 @@ public class Map : MonoBehaviour
     System.Action<string, Vector2> isDroppedCallback;
 
     public BoxList boxes;
-    public RegionList regions;
+    public RegionList rList;
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +32,9 @@ public class Map : MonoBehaviour
 
 
         Timer[] timer = FindObjectsOfType<Timer>();
-        // Timer t1 = timer[0];
+        Timer t1 = timer[0];
         // Debug.Log(timer.name);
-        // Score score = FindObjectsOfType<Score>()[0];
+        Score score = FindObjectsOfType<Score>()[0];
         // Debug.Log(score.name);
 
         boxes = new BoxList(1);
@@ -45,23 +45,17 @@ public class Map : MonoBehaviour
 
         rList.IsDroppedCallback = (string id, Vector2 location) =>
         {
-            Debug.Log("callback");
-            Debug.Log(id);
-            Debug.Log(location);
-
-            Debug.Log(boxes);
-
-
             string match = boxes.findBoxMatch(location);
             Debug.Log(match);
 
-        //     if (match == id)
-        //     {
-        //         // update score
-        //         score.updateScore(true);
+            if (match == id)
+            {
+                // update score
+                score.updateScore(true);
 
-        //         // update box label
-        //         boxes.updateBoxLabel(id);
+                // update box label
+                boxes.updateBoxLabel(id);
+            }
 
         //         // replace with unmatched region
         //         int index = -1;
