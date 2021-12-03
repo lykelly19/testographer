@@ -39,8 +39,6 @@ public class BoxList
             b.X = b.transform.position.x;
             b.Y = b.transform.position.y;
             b.Level = level;
-
-            Debug.Log(b.X);
         }
     }
 
