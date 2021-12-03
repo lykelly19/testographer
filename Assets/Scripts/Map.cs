@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Map : MonoBehaviour
 {
+
+    /*
     string mapName = null;
     public int highScore = 0;
     int level;
@@ -33,11 +35,8 @@ public class Map : MonoBehaviour
         mapName = name;
         level = difficulty;
 
-        // use the name to get the file path
-        string sFilePath = System.IO.Path.Combine(Application.dataPath, string.Format(@"../Resources/MapData/{0}.txt", name));
-
-        regions = new RegionList(sFilePath, isDroppedCallback);
-        sidebarList = regions.generateSidebarList(10);
+        regions = new RegionList("temp", isDroppedCallback);
+        //sidebarList = regions.generateSidebarList(10);
         boxes = new BoxList(level);
 
         isDroppedCallback = (string id, Vector2 location) =>
@@ -132,4 +131,5 @@ public class Map : MonoBehaviour
         boxes.reset();
         mapName = null;
     }
+    */
 }

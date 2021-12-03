@@ -7,28 +7,16 @@ using UnityEngine.SceneManagement;  // for changing scenes
 public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
-    // Map chosenMap;
     int chosenDifficulty;
-     public static Map currentMap;
+    // public static Map currentMap;
     
     // GameManager constructor.
     public GameManager()
     {
-        // When the game starts, this will be called to initialize the object.
-        // Difficulty and Map will be set to placeholders to wait for input from the user.
-        // chosenMap = null;
-
-        // FIXME: ADD CODE TO CREATE MAP
-        currentMap = new Map("UnitedStates", -1);
-
+        // currentMap = new Map("UnitedStates", -1);
         chosenDifficulty = -1;
     }
 
-    // Changes the current map to parameter m.
-    // Commented out until Map class is finished.
-    /*
-    private void selectMap(Map m) { chosenMap = m; }
-    */
 
     /*
     Function to call from the map menu to choose map.
@@ -59,9 +47,14 @@ public class GameManager : MonoBehaviour
         // Change scene to the game.
         SceneManager.LoadScene("GamePage");
 
-        currentMap.Level = chosenDifficulty;
+        // currentMap.Level = chosenDifficulty;
         // populate BoxList
-        currentMap.populate();
+        // currentMap.populate();
+
+        playGame();
+
+
+
     }
 
     // Loads the scene passed as parameter
@@ -93,6 +86,8 @@ public class GameManager : MonoBehaviour
     // Does everything the game needs to do in a single frame.
     void playGame()
     {
+        Debug.Log("test");
+
         // Game stuff
 
 
@@ -134,6 +129,7 @@ public class GameManager : MonoBehaviour
     // Required by Unity for this object.
     void Update()
     {
+        
         // Stuff for every frame after the first frame.
     }
 }

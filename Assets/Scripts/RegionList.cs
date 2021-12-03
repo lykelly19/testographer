@@ -4,189 +4,175 @@ using UnityEngine;
 
 public class RegionList
 {
-    // DECLARATIONS
-    List<Region> regions;
-    string filePath;
-    System.Action<string, Vector2> isDroppedCallback;
-
-    // METHODS
-    public RegionList(string path, System.Action<string, Vector2> isDropped)
-    {
-        regions = new List<Region>();
-        filePath = path;
-        populateList();
-        isDroppedCallback = isDropped;
-    }
-
-    // Reads data from file at filePath and populates RegionList with it
-    private void populateList()
-    {
-        System.Console.WriteLine("FIXME: RegionList.populateList() is untested!\n");
-
-        if (!System.IO.File.Exists(filePath))
-        {
-            // Open the file to read from.
-            using (System.IO.StreamReader sr = System.IO.File.OpenText(filePath))
-            {
-                string dataString;
-                while ((dataString = sr.ReadLine()) != null)
-                {
-                    // DELETE ME: testing info print statement
-                    System.Console.WriteLine("dataString: {0}\n", dataString);
-                    regions.Add(new Region() { Id = dataString, IsMatched = false, IsDroppedCallback = isDroppedCallback });
-                }
-            }
-        }
-    }
-
-    // Returns index of Region with matching ID
-    public int findIdMatch(string id)
-    {
-        for(int i = 0; i < regions.Count; i++)
-        {
-            if (checkIdMatch(regions[i], id))
-            {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
-    // Checks if Region has the id
-    private bool checkIdMatch(Region r, string id)
-    {
-        if (r.Id == id)
-        {
-            return true;
-        }
-        return false;
-    }
     
-    // sets the isMatched flag to indicate that the Region at index i has been matched
-    private void setMatched(int index, bool isMatched)
-    {
-        if(index >= 0 && index < regions.Count)
-        {
-            regions[index].IsMatched = isMatched;
-        }
-    }
+    // // DECLARATIONS
+    // List<Region> regions;
+    // System.Action<string, Vector2> isDroppedCallback;
 
-    /*
-     * generateSidebarList() => RegionList 
-     * Randomly generates a list of ten Regions and returns it
-     */
+    // // METHODS
+    // public RegionList(string path, System.Action<string, Vector2> isDropped)
+    // {
+    //     regions = new List<Region>();
+    //     populateList();
+    //     isDroppedCallback = isDropped;
+    // }
 
-    public List<Region> generateSidebarList(int size)
-    {
-        List<Region> sidebarList = new List<Region>();
+    // // Reads data from file at filePath and populates RegionList with it
+    // private void populateList()
+    // {
+    //     regions.Add(new Region() { Id = "temp", IsMatched = false, IsDroppedCallback = isDroppedCallback });
+    // }
 
-        while (sidebarList.Count < size)
-        {
-            Region newR = getRandomUnmatched();
+    // // Returns index of Region with matching ID
+    // public int findIdMatch(string id)
+    // {
+    //     for(int i = 0; i < regions.Count; i++)
+    //     {
+    //         if (checkIdMatch(regions[i], id))
+    //         {
+    //             return i;
+    //         }
+    //     }
 
-            // make sure a string was returned and that it's not a duplicate id
-            if(newR != null && !sidebarList.Exists(s => s.Id == newR.Id))
-            {
-                sidebarList.Add(newR);
-            }
-        }
+    //     return -1;
+    // }
 
-        return sidebarList;
-    }
+    // // Checks if Region has the id
+    // private bool checkIdMatch(Region r, string id)
+    // {
+    //     if (r.Id == id)
+    //     {
+    //         return true;
+    //     }
+    //     return false;
+    // }
+    
+    // // sets the isMatched flag to indicate that the Region at index i has been matched
+    // private void setMatched(int index, bool isMatched)
+    // {
+    //     if(index >= 0 && index < regions.Count)
+    //     {
+    //         regions[index].IsMatched = isMatched;
+    //     }
+    // }
 
-    // Replaces marks a Region and matched and replaces it in the sidebarList. if there's no unmatched
-    // regions left, it is simply removed from sidebarList.
-    public List<Region> replaceRegion(List<Region> sidebarList, int index)
-    {
-        int regionIndex = findIdMatch(sidebarList[index].Id);
+    // /*
+    //  * generateSidebarList() => RegionList 
+    //  * Randomly generates a list of ten Regions and returns it
+    //  */
 
-        if(regionIndex >= 0 && regionIndex < regions.Count)
-        {
-            setMatched(regionIndex, true);
+    // public List<Region> generateSidebarList(int size)
+    // {
+    //     List<Region> sidebarList = new List<Region>();
 
-            Region newR = getRandomUnmatched();
-            if(newR != null && findIdMatch(sidebarList, newR.Id) == -1)
-            {
-                sidebarList[index] = newR;
-            } 
-            else if (newR == null)
-            {
-                sidebarList.RemoveAt(index);
-            }
-        }
+    //     while (sidebarList.Count < size)
+    //     {
+    //         Region newR = getRandomUnmatched();
 
-        return sidebarList;
-    }
-    /*
-     * getRandomUnmatched() => Region
-     * Picks a random item in unmatched and returns it
-     * */
-    private Region getRandomUnmatched()
-    {
-        var rand = new System.Random();
+    //         // make sure a string was returned and that it's not a duplicate id
+    //         if(newR != null && !sidebarList.Exists(s => s.Id == newR.Id))
+    //         {
+    //             sidebarList.Add(newR);
+    //         }
+    //     }
 
-        List<Region> unmatched = getUnmatchedList();
+    //     return sidebarList;
+    // }
 
-        if (unmatched == null)
-        {
-            return null;
-        }
+    // // Replaces marks a Region and matched and replaces it in the sidebarList. if there's no unmatched
+    // // regions left, it is simply removed from sidebarList.
+    // public List<Region> replaceRegion(List<Region> sidebarList, int index)
+    // {
+    //     int regionIndex = findIdMatch(sidebarList[index].Id);
 
-        int index = rand.Next(unmatched.Count);
+    //     if(regionIndex >= 0 && regionIndex < regions.Count)
+    //     {
+    //         setMatched(regionIndex, true);
 
-        return unmatched[index];
-    }
+    //         Region newR = getRandomUnmatched();
+    //         if(newR != null && findIdMatch(sidebarList, newR.Id) == -1)
+    //         {
+    //             sidebarList[index] = newR;
+    //         } 
+    //         else if (newR == null)
+    //         {
+    //             sidebarList.RemoveAt(index);
+    //         }
+    //     }
 
-    public bool checkAllMatched()
-    {
-        if(getUnmatchedList() == null)
-        {
-            return true;
-        }
-        return false;
-    }
-    private List<Region> getUnmatchedList()
-    {
-        List<Region> unmatched = new List<Region>();
+    //     return sidebarList;
+    // }
+    // /*
+    //  * getRandomUnmatched() => Region
+    //  * Picks a random item in unmatched and returns it
+    //  * */
+    // private Region getRandomUnmatched()
+    // {
+    //     var rand = new System.Random();
 
-        for(int i = 0; i < regions.Count; i++)
-        {
-            if (!regions[i].IsMatched)
-            {
-                unmatched.Add(regions[i]);
-            }
-        }
+    //     List<Region> unmatched = getUnmatchedList();
 
-        if (unmatched.Count < 1)
-        {
-            return null;
-        }
+    //     if (unmatched == null)
+    //     {
+    //         return null;
+    //     }
 
-        return unmatched;
-    }
+    //     int index = rand.Next(unmatched.Count);
 
-    // Returns index of Region with matching ID
-    public int findIdMatch(List<Region> sidebarList, string id)
-    {
-        for (int i = 0; i < regions.Count; i++)
-        {
-            if (checkIdMatch(regions[i], id))
-            {
-                return i;
-            }
-        }
+    //     return unmatched[index];
+    // }
 
-        return -1;
-    }
+    // public bool checkAllMatched()
+    // {
+    //     if(getUnmatchedList() == null)
+    //     {
+    //         return true;
+    //     }
+    //     return false;
+    // }
+    // private List<Region> getUnmatchedList()
+    // {
+    //     List<Region> unmatched = new List<Region>();
 
-    // Resets RegionList back to it's initial state.
-    public void reset()
-    {
-        // Sets every regions IsMatched to false.
-        for(int i = 0; i < regions.Count; i++)
-        {
-            regions[i].IsMatched = false;
-        }
-    }
+    //     for(int i = 0; i < regions.Count; i++)
+    //     {
+    //         if (!regions[i].IsMatched)
+    //         {
+    //             unmatched.Add(regions[i]);
+    //         }
+    //     }
+
+    //     if (unmatched.Count < 1)
+    //     {
+    //         return null;
+    //     }
+
+    //     return unmatched;
+    // }
+
+    // // Returns index of Region with matching ID
+    // public int findIdMatch(List<Region> sidebarList, string id)
+    // {
+    //     for (int i = 0; i < regions.Count; i++)
+    //     {
+    //         if (checkIdMatch(regions[i], id))
+    //         {
+    //             return i;
+    //         }
+    //     }
+
+    //     return -1;
+    // }
+
+    // // Resets RegionList back to it's initial state.
+    // public void reset()
+    // {
+    //     // Sets every regions IsMatched to false.
+    //     for(int i = 0; i < regions.Count; i++)
+    //     {
+    //         regions[i].IsMatched = false;
+    //     }
+    // }
+
+    
 }
