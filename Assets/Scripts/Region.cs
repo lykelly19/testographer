@@ -40,7 +40,7 @@ public class Region : MonoBehaviour
 
             if(Input.GetMouseButtonUp(0)) {
                 dragging = false;
-                isDroppedCallback(id, regionCoordinates);
+                isDroppedCallback(id, transform.position);
             }
         }
         
