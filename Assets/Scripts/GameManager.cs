@@ -4,31 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;  // for changing scenes
 
+
 public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
-    // Map chosenMap;
     int chosenDifficulty;
-     public static Map currentMap;
     
     // GameManager constructor.
     public GameManager()
     {
-        // When the game starts, this will be called to initialize the object.
-        // Difficulty and Map will be set to placeholders to wait for input from the user.
-        // chosenMap = null;
-
-        // FIXME: ADD CODE TO CREATE MAP
-        currentMap = new Map("UnitedStates", -1);
-
+        // currentMap = new Map("UnitedStates", -1);
         chosenDifficulty = -1;
     }
 
-    // Changes the current map to parameter m.
-    // Commented out until Map class is finished.
-    /*
-    private void selectMap(Map m) { chosenMap = m; }
-    */
 
     /*
     Function to call from the map menu to choose map.
@@ -56,12 +44,7 @@ public class GameManager : MonoBehaviour
             System.Environment.Exit(-1);
         }
 
-        // Change scene to the game.
-        SceneManager.LoadScene("GamePage");
-
-        currentMap.Level = chosenDifficulty;
-        // populate BoxList
-        currentMap.populate();
+        playGame();
     }
 
     // Loads the scene passed as parameter
@@ -93,6 +76,9 @@ public class GameManager : MonoBehaviour
     // Does everything the game needs to do in a single frame.
     void playGame()
     {
+        // Change scene to the game.
+        SceneManager.LoadScene("GamePage");
+
         // Game stuff
 
 
@@ -126,14 +112,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1920, 1080, false);  // set screen width & height
-
-        // Stuff for FIRST FRAME ONLY.
     }
 
     // Update is called once per frame.
     // Required by Unity for this object.
     void Update()
     {
+        // Debug.Log(SceneManager.GetActiveScene().name);
         // Stuff for every frame after the first frame.
     }
 }

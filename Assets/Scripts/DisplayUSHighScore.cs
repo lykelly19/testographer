@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class DisplayUSHighScore : MonoBehaviour
 {
-   public Text scoreText;
+//    public Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
-     Map tempMap = GameManager.currentMap;
-     int USHighScore = tempMap.HighScore;
-     scoreText.text = "United States\nHigh Score: " + USHighScore;
+        // Map tempMap = GameManager.currentMap;
+        // int USHighScore = tempMap.HighScore;
+        // scoreText.text = "United States\nHigh Score: " + USHighScore;
     }
 }
 

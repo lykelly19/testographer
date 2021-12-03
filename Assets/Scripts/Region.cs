@@ -11,6 +11,9 @@ public class Region : MonoBehaviour
     public bool dragging = false;
     private Vector2 originalPosition;
 
+    public bool dragging = false;
+    private Vector2 originalPosition;
+
     public void Start()
     {
         originalPosition = transform.position;
@@ -21,12 +24,15 @@ public class Region : MonoBehaviour
         dragging = true;
     }
 
-    public void OnMouseUp()
-    {
-        dragging = false;
-    }
+    // void OnMouseUp()
+    // {
+    //     if(dragging == true) {
+    //         dragging = false;
+    //         isDroppedCallback(id, regionCoordinates);
+    //     }
+    // }
 
-    // Update is called once per frame
+     // Update is called once per frame
     void Update()
     {
         if (dragging)
@@ -34,7 +40,13 @@ public class Region : MonoBehaviour
             Vector2 mousePos = Input.mousePosition;
             Vector2 objPos = Camera.main.ScreenToWorldPoint(mousePos);
             transform.position = objPos;
+
+            if(Input.GetMouseButtonUp(0)) {
+                dragging = false;
+                isDroppedCallback(id, transform.position);
+            }
         }
+        
         else
         {
             transform.position = originalPosition;
