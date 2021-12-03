@@ -50,12 +50,6 @@ public class RegionList
     //     }
     // }
 
-    public void addRegion(Region r) 
-    {
-        regions.Add(r);
-        r.IsDroppedCallback = isDroppedCallback;
-    }
-
 
     // // Returns index of Region with matching ID
     // public int findIdMatch(string id)
