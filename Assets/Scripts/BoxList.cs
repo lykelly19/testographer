@@ -71,7 +71,7 @@ public class BoxList
 
             // Check if within certain radius
             // FIXME: pick a radius that makes sense. 0.1 was just a guess.
-            if(xDif < 0.1 && yDif < 0.1)
+            if(xDif < 0.5 && yDif < 0.5)
             {
                 return i;
             }

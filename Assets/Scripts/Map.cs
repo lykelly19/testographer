@@ -11,8 +11,12 @@ public class Map : MonoBehaviour
     public int highScore = 0;
     System.Action<string, Vector2> isDroppedCallback;
 
-    public BoxList boxes;
-    public RegionList rList;
+    BoxList boxes;
+    RegionList rList;
+    Region[] sidebarList;
+
+    Timer timer;
+    Score score;
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +35,17 @@ public class Map : MonoBehaviour
         }
 
 
-        Timer[] timer = FindObjectsOfType<Timer>();
-        Timer t1 = timer[0];
+        Timer[] timers = FindObjectsOfType<Timer>();
+        timer = timers[0];
         // Debug.Log(timer.name);
-        Score score = FindObjectsOfType<Score>()[0];
+        score = FindObjectsOfType<Score>()[0];
         // Debug.Log(score.name);
 
         boxes = new BoxList(1);
-
         rList = new RegionList();
-        Region[] regions = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
+
+        // Get Regions in sidebar
+        sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
     
 
         rList.IsDroppedCallback = (string id, Vector2 location) =>
@@ -90,11 +95,9 @@ public class Map : MonoBehaviour
         //         score.updateScore(false);
         //     }
         };
-        
-        foreach(Region r in regions)
-            rList.addRegion(r);
 
-
+        foreach (Region r in sidebarList)
+            r.IsDroppedCallback = rList.IsDroppedCallback;
     }
 
 

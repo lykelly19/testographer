@@ -13,10 +13,10 @@ public class DisplayScore : MonoBehaviour
     {
     //  Map tempMap = GameManager.currentMap;
     //  Score tempScore = tempMap.score;
-    //  int originalScore = tempScore.originalScore;
-    //  int levelMultiplier = tempScore.levelMultiplier;
-    //  int timeBonus = tempScore.timeBonus;
-    //  int finalScore = tempScore.currentScore;
+    //  int originalScore = tempScore.OriginalScore;
+    //  int levelMultiplier = tempScore.LevelMultiplier;
+    //  int timeBonus = tempScore.TimeBonus;
+    //  int finalScore = tempScore.CurrentScore;
     //  scoreText.text = "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + finalScore;   
     }
 }

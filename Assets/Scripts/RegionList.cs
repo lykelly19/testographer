@@ -17,6 +17,10 @@ public class RegionList
     }
 
     public System.Action<string, Vector2> IsDroppedCallback {
+        get
+        {
+            return isDroppedCallback;
+        }
         set {
             isDroppedCallback = value;
             foreach(Region r in regions) {
