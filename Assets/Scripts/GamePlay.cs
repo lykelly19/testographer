@@ -10,10 +10,8 @@ public class GamePlay : MonoBehaviour
 {
     public Camera mainCamera;
     public Font labelFont;
-
     public int highScore = 0;
-
-
+    System.Action<string, Vector2> isDroppedCallback;
 
     // Start is called before the first frame update
     void Start()
@@ -38,13 +36,63 @@ public class GamePlay : MonoBehaviour
         // Score score = FindObjectsOfType<Score>()[0];
         // Debug.Log(score.name);
 
-        BoxList b = new BoxList(1);
+        BoxList boxes = new BoxList(1);
 
         RegionList rList = new RegionList();
         Region[] regions = FindObjectsOfType<Region>();   // add to RegionList?
     
+
+        rList.IsDroppedCallback = (string id, Vector2 location) =>
+        {
+            Debug.Log("callback");
+            // string match = boxes.findBoxMatch(location);
+
+            // if (match == id)
+            // {
+            //     // update score
+            //     score.updateScore(true);
+
+            //     // update box label
+            //     boxes.updateBoxLabel(id);
+
+            //     // replace with unmatched region
+            //     int index = -1;
+            //     for (int i = 0; i < sidebarList.Count; i++)
+            //     {
+            //         if (sidebarList[i].Id == id)
+            //         {
+            //             index = i;
+            //         }
+            //     }
+            //     regions.replaceRegion(sidebarList, index);
+
+            //     // check if game is over & end it if so:
+            //     if (regions.checkAllMatched())
+            //     {
+            //         // calculate final score
+            //         float elapsedSeconds = timer.getElapsedSeconds();
+            //         score.calculateFinalScore((int)elapsedSeconds, level);
+
+            //         // update high score
+            //         if (score.currentScore > highScore)
+            //         {
+            //             highScore = score.currentScore;
+            //         }
+
+            //         // move to end page
+            //         SceneManager.LoadScene("EndMenu");
+            //     }
+            // }
+            // else
+            // {
+            //     score.updateScore(false);
+            // }
+        };
+        
         foreach(Region r in regions)
             rList.addRegion(r);
+
+
     }
 
 

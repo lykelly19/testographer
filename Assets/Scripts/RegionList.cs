@@ -7,14 +7,22 @@ public class RegionList
     
     // DECLARATIONS
     List<Region> regions;
-    // System.Action<string, Vector2> isDroppedCallback;
+    System.Action<string, Vector2> isDroppedCallback;
 
 
     public RegionList()
     {
         regions = new List<Region>();
         // populateList();
-        // isDroppedCallback = isDropped;
+    }
+
+    public System.Action<string, Vector2> IsDroppedCallback {
+        set {
+            isDroppedCallback = value;
+            foreach(Region r in regions) {
+                r.IsDroppedCallback = isDroppedCallback;
+            }
+        }
     }
 
     // METHODS
@@ -41,6 +49,7 @@ public class RegionList
     public void addRegion(Region r) 
     {
         regions.Add(r);
+        r.IsDroppedCallback = isDroppedCallback;
     }
 
 
