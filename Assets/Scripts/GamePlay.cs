@@ -70,8 +70,6 @@ public class GamePlay : MonoBehaviour
         go1.transform.position = new Vector2(xPos, yPos);
         go1.transform.localScale = new Vector3(1.98f, 0.37f, 0.59f);
 
-        go1.AddComponent<DragAndDrop>();  // add the DragAndDrop script to the Region Label GameObject
-
         // Canvas
         Canvas myCanvas; 
         GameObject myGO;
