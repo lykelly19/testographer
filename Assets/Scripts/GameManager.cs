@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;  // for changing scenes
 
+
 public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
     int chosenDifficulty;
-    // public static Map currentMap;
     
     // GameManager constructor.
     public GameManager()
@@ -44,17 +44,7 @@ public class GameManager : MonoBehaviour
             System.Environment.Exit(-1);
         }
 
-        // Change scene to the game.
-        SceneManager.LoadScene("GamePage");
-
-        // currentMap.Level = chosenDifficulty;
-        // populate BoxList
-        // currentMap.populate();
-
         playGame();
-
-
-
     }
 
     // Loads the scene passed as parameter
@@ -86,7 +76,8 @@ public class GameManager : MonoBehaviour
     // Does everything the game needs to do in a single frame.
     void playGame()
     {
-        Debug.Log("test");
+        // Change scene to the game.
+        SceneManager.LoadScene("GamePage");
 
         // Game stuff
 
@@ -121,15 +112,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1920, 1080, false);  // set screen width & height
-
-        // Stuff for FIRST FRAME ONLY.
     }
 
     // Update is called once per frame.
     // Required by Unity for this object.
     void Update()
     {
-        
+        // Debug.Log(SceneManager.GetActiveScene().name);
         // Stuff for every frame after the first frame.
     }
 }
