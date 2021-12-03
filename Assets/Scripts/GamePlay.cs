@@ -32,7 +32,17 @@ public class GamePlay : MonoBehaviour
         }
 
 
+        Timer[] timer = FindObjectsOfType<Timer>();
+        // Timer t1 = timer[0];
+        // Debug.Log(timer.name);
 
+        BoxList b = new BoxList(1);
+
+        // Score score = FindObjectsOfType<Score>()[0];
+        // Debug.Log(score.name);
+       
+
+        populate();
 
 
 
@@ -40,16 +50,10 @@ public class GamePlay : MonoBehaviour
     }
 
 
+    void populate()
+    {
 
-
-    // public void populate()
-    // {
-    //     boxes.populateList();
-    //     Timer[] timers = Object.FindObjectsOfType<Timer>();
-    //     timer = timers[0];
-    //     Score[] scores = Object.FindObjectsOfType<Score>();
-    //     score = scores[0];
-    // }
+    }
 
 
     void createRegionLabelObject(string gameObjectName, string displayText, float xPos, float yPos) {
