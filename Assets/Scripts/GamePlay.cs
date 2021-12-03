@@ -35,25 +35,19 @@ public class GamePlay : MonoBehaviour
         Timer[] timer = FindObjectsOfType<Timer>();
         // Timer t1 = timer[0];
         // Debug.Log(timer.name);
+        // Score score = FindObjectsOfType<Score>()[0];
+        // Debug.Log(score.name);
 
         BoxList b = new BoxList(1);
 
-        // Score score = FindObjectsOfType<Score>()[0];
-        // Debug.Log(score.name);
-       
-
-        populate();
-
-
-
-
+        RegionList rList = new RegionList();
+        Region[] regions = FindObjectsOfType<Region>();   // add to RegionList?
+    
+        foreach(Region r in regions)
+            rList.addRegion(r);
     }
 
 
-    void populate()
-    {
-
-    }
 
 
     void createRegionLabelObject(string gameObjectName, string displayText, float xPos, float yPos) {

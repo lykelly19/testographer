@@ -5,23 +5,44 @@ using UnityEngine;
 public class RegionList
 {
     
-    // // DECLARATIONS
-    // List<Region> regions;
+    // DECLARATIONS
+    List<Region> regions;
     // System.Action<string, Vector2> isDroppedCallback;
 
-    // // METHODS
-    // public RegionList(string path, System.Action<string, Vector2> isDropped)
+
+    public RegionList()
+    {
+        regions = new List<Region>();
+        // populateList();
+        // isDroppedCallback = isDropped;
+    }
+
+    // METHODS
+    // public RegionList(System.Action<string, Vector2> isDropped)
     // {
     //     regions = new List<Region>();
     //     populateList();
     //     isDroppedCallback = isDropped;
     // }
 
-    // // Reads data from file at filePath and populates RegionList with it
+    // Reads data from file at filePath and populates RegionList with it
     // private void populateList()
     // {
-    //     regions.Add(new Region() { Id = "temp", IsMatched = false, IsDroppedCallback = isDroppedCallback });
+    //     // temporary data 
+    //      string[] data = new string[] { "Maine", "Connecticut", "Pennsylvania", "New Jersey",
+    //     "Delaware","New Hampshire","Vermont","Massachusetts","New York","Rhode Island"};
+
+    //     for(int i=0; i<10; i++) {
+    //         regions.Add(new Region() { Id = data[i], IsMatched = false, IsDroppedCallback = isDroppedCallback });
+    //         Debug.Log(regions[i].Id);
+    //     }
     // }
+
+    public void addRegion(Region r) 
+    {
+        regions.Add(r);
+    }
+
 
     // // Returns index of Region with matching ID
     // public int findIdMatch(string id)
