@@ -12,6 +12,7 @@ public class Map : MonoBehaviour
     System.Action<string, Vector2> isDroppedCallback;
 
     public BoxList boxes;
+    public RegionList regions;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,8 @@ public class Map : MonoBehaviour
 
         boxes = new BoxList(1);
 
-        RegionList rList = new RegionList();
-        Region[] regions = FindObjectsOfType<Region>();   // add to RegionList?
+        rList = new RegionList();
+        Region[] regions = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
     
 
         rList.IsDroppedCallback = (string id, Vector2 location) =>
