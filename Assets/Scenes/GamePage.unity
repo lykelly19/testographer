@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Nebraska
+  boxText: {fileID: 0}
 --- !u!1 &22496660
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Maryland
+  boxText: {fileID: 0}
 --- !u!1 &32726135
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Alabama
+  boxText: {fileID: 0}
 --- !u!1 &64206804
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Louisiana
+  boxText: {fileID: 0}
 --- !u!1 &89485187
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Minnesota
+  boxText: {fileID: 0}
 --- !u!1 &92940437
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Florida
+  boxText: {fileID: 0}
 --- !u!1 &241709412
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Illinois
+  boxText: {fileID: 0}
 --- !u!1 &593057489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Nevada
+  boxText: {fileID: 0}
 --- !u!1 &865021244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Vermont
+  boxText: {fileID: 0}
 --- !u!1 &871221768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Idaho
+  boxText: {fileID: 0}
 --- !u!1 &889118584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Delaware
+  boxText: {fileID: 0}
 --- !u!1 &962340534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: California
+  boxText: {fileID: 0}
 --- !u!1 &964138812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Iowa
+  boxText: {fileID: 0}
 --- !u!1 &1000342275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Wyoming
+  boxText: {fileID: 0}
 --- !u!1 &1008361572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Oklahoma
+  boxText: {fileID: 0}
 --- !u!1 &1016563926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New Mexico
+  boxText: {fileID: 0}
 --- !u!1 &1042558755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Washington
+  boxText: {fileID: 0}
 --- !u!1 &1042775372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Virginia
+  boxText: {fileID: 0}
 --- !u!1 &1044117557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Utah
+  boxText: {fileID: 0}
 --- !u!1 &1173848566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,7 +2415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: North Dakota
+  boxText: {fileID: 0}
 --- !u!1 &1242082882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,7 +2513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Connecticut
+  boxText: {fileID: 0}
 --- !u!1 &1260580707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,7 +2611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New Jersey
+  boxText: {fileID: 0}
 --- !u!1 &1317435830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Oregon
+  boxText: {fileID: 0}
 --- !u!1 &1347217936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,7 +2938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Wisconsin
+  boxText: {fileID: 0}
 --- !u!1 &1407305312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Texas
+  boxText: {fileID: 0}
 --- !u!1 &1433508459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,7 +3134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Indiana
+  boxText: {fileID: 0}
 --- !u!1 &1448343442
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,7 +3232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Michigan
+  boxText: {fileID: 0}
 --- !u!1 &1461990499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,7 +3424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Mississippi
+  boxText: {fileID: 0}
 --- !u!1 &1482321966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,7 +3522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New York
+  boxText: {fileID: 0}
 --- !u!1 &1485542097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: South Dakota
+  boxText: {fileID: 0}
 --- !u!1 &1492989555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,7 +3718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Alaska
+  boxText: {fileID: 0}
 --- !u!1 &1494887412
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,7 +3816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Arizona
+  boxText: {fileID: 0}
 --- !u!1 &1502904285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,7 +3914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: North Carolina
+  boxText: {fileID: 0}
 --- !u!1 &1550926770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: South Carolina
+  boxText: {fileID: 0}
 --- !u!1 &1627348164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,7 +4194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Ohio
+  boxText: {fileID: 0}
 --- !u!1 &1652957635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,7 +4292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Kansas
+  boxText: {fileID: 0}
 --- !u!1 &1671590768
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,7 +4390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Montana
+  boxText: {fileID: 0}
 --- !u!1 &1687444297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4488,7 +4488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Maine
+  boxText: {fileID: 0}
 --- !u!1 &1705279705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4586,7 +4586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Kentucky
+  boxText: {fileID: 0}
 --- !u!1 &1718031536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4684,7 +4684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Arkansas
+  boxText: {fileID: 0}
 --- !u!1 &1734880069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,7 +4694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734880071}
-  - component: {fileID: 1734880070}
+  - component: {fileID: 1734880072}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -4702,20 +4702,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1734880070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734880069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999e3b40c68e74bec82b71244d823109, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 620515198}
-  labelFont: {fileID: 12800000, guid: e25a6029074067e4e9f0eab4a6a6da9e, type: 3}
 --- !u!4 &1734880071
 Transform:
   m_ObjectHideFlags: 0
@@ -4731,6 +4717,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734880072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734880069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37b6aeb653442b4d8cba3b658aba1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 620515198}
+  labelFont: {fileID: 12800000, guid: e25a6029074067e4e9f0eab4a6a6da9e, type: 3}
+  highScore: 0
 --- !u!1 &1740455539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,7 +4913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: West Virginia
+  boxText: {fileID: 0}
 --- !u!1 &1862960601
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,7 +5011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New Hampshire
+  boxText: {fileID: 0}
 --- !u!1 &1864070929
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,7 +5193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Rhode Island
+  boxText: {fileID: 0}
 --- !u!1 &1963311998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,7 +5291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Massachusetts
+  boxText: {fileID: 0}
 --- !u!1 &1998417443
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,7 +5389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Colorado
+  boxText: {fileID: 0}
 --- !u!1 &2022990527
 GameObject:
   m_ObjectHideFlags: 0
@@ -5486,7 +5487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Missouri
+  boxText: {fileID: 0}
 --- !u!1 &2045201924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5668,7 +5669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Pennsylvania
+  boxText: {fileID: 0}
 --- !u!1 &2070130257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,7 +5767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Georgia
+  boxText: {fileID: 0}
 --- !u!1 &2125428990
 GameObject:
   m_ObjectHideFlags: 0
@@ -5864,7 +5865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Tennessee
+  boxText: {fileID: 0}
 --- !u!1 &2146587464
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,4 +5963,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Hawaii
+  boxText: {fileID: 0}

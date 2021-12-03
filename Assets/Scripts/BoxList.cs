@@ -64,33 +64,35 @@ public class BoxList
     // */
     // private int findLocationMatch(float posX, float posY)
     // {
-    //     for(int i = 0; i < boxes.Length; i++)
-    //     {
-    //         float xDif = System.Math.Abs(posX - boxes[i].X);
-    //         float yDif = System.Math.Abs(posY - boxes[i].Y);
+    //     // for(int i = 0; i < boxes.Length; i++)
+    //     // {
+    //     //     float xDif = System.Math.Abs(posX - boxes[i].X);
+    //     //     float yDif = System.Math.Abs(posY - boxes[i].Y);
 
-    //         // Check if within certain radius
-    //         // FIXME: pick a radius that makes sense. 0.1 was just a guess.
-    //         if(xDif < 0.1 && yDif < 0.1)
-    //         {
-    //             return i;
-    //         }
-    //     }
+    //     //     // Check if within certain radius
+    //     //     // FIXME: pick a radius that makes sense. 0.1 was just a guess.
+    //     //     if(xDif < 0.1 && yDif < 0.1)
+    //     //     {
+    //     //         return i;
+    //     //     }
+    //     // }
 
-    //     return -1;
+    //     // return -1;
     // }
 
-    // public string findBoxMatch(Vector2 position)
-    // {
-    //     int index = findLocationMatch(position.x, position.y);
+    public string findBoxMatch(Vector2 position)
+    {
 
-    //     if(index >= 0 && index < boxes.Length)
-    //     {
-    //         return boxes[index].name;
-    //     }
+        return null;
+        // int index = findLocationMatch(position.x, position.y);
 
-    //     return null;
-    // }
+        // if(index >= 0 && index < boxes.Length)
+        // {
+        //     return boxes[index].name;
+        // }
+
+        // return null;
+    }
 
     // // Resets Boxlist back to its original state.
     // public void reset()
