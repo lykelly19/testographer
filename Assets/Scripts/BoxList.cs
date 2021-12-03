@@ -4,59 +4,45 @@ using UnityEngine;
 
 public class BoxList
 {
+    Box[] boxes;
+    int hlIndex; // index of currently highlighted box
+    int level;
 
+    public int Level
+    {
+        get
+        {
+            return level;
+        }
+        set
+        {
+            level = value;
+        }
+    }
 
-    // Box[] boxes;
-    // int hlIndex; // index of currently highlighted box
-    // int level;
-    // public int Level
-    // {
-    //     get
-    //     {
-    //         return level;
-    //     }
-    //     set
-    //     {
-    //         level = value;
-    //     }
-    // }
+    public BoxList(int difficulty)
+    {
+        hlIndex = -1;
+        populateList();
+        level = difficulty;
+    }
 
-    // public BoxList(int difficulty)
-    // {
-    //     hlIndex = -1;
-    //     populateList();
-    //     level = difficulty;
-    // }
+    // Reads data from file at filePath and populates BoxList with it
+    public void populateList()
+    {
+        // each box has a public id
+        Box[] boxes = Object.FindObjectsOfType<Box>();
 
-    // // Reads data from file at filePath and populates BoxList with it
-    // public void populateList()
-    // {
-    //     // each box has a public id
-    //     Box[] boxes = Object.FindObjectsOfType<Box>();
+        // retrieve the location of each box
+        foreach (Box b in boxes)
+        {
+            b.X = b.transform.position.x;
+            b.Y = b.transform.position.y;
+            b.Level = level;
 
-    //     // retrieve the location of each box
-    //     foreach (Box b in boxes)
-    //     {
-    //         b.X = b.transform.position.x;
-    //         b.Y = b.transform.position.y;
-    //         b.Level = level;
-    //     }
-
-    // }
-    // // updates Box highlight styling based on location
-    // public void updateHighlight(float posX, float posY)
-    // {
-    //     if (hlIndex >= 0)
-    //     {
-    //         boxes[hlIndex].unHighlight();
-    //     }
-    //     int newH = findLocationMatch(posX, posY);
-
-    //     if (newH >= 0 && newH < boxes.Length)
-    //     {
-    //         boxes[newH].highlight();
-    //     }
-    // }
+            Debug.Log(b.X);
+        }
+    }
 
     // // Function is called when a match happens.
     // // If so, this will update the box's label so
