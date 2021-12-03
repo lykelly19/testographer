@@ -45,48 +45,50 @@ public class GamePlay : MonoBehaviour
         rList.IsDroppedCallback = (string id, Vector2 location) =>
         {
             Debug.Log("callback");
+            Debug.Log(id);
+            Debug.Log(location);
             // string match = boxes.findBoxMatch(location);
 
-            // if (match == id)
-            // {
-            //     // update score
-            //     score.updateScore(true);
+        //     if (match == id)
+        //     {
+        //         // update score
+        //         score.updateScore(true);
 
-            //     // update box label
-            //     boxes.updateBoxLabel(id);
+        //         // update box label
+        //         boxes.updateBoxLabel(id);
 
-            //     // replace with unmatched region
-            //     int index = -1;
-            //     for (int i = 0; i < sidebarList.Count; i++)
-            //     {
-            //         if (sidebarList[i].Id == id)
-            //         {
-            //             index = i;
-            //         }
-            //     }
-            //     regions.replaceRegion(sidebarList, index);
+        //         // replace with unmatched region
+        //         int index = -1;
+        //         for (int i = 0; i < sidebarList.Count; i++)
+        //         {
+        //             if (sidebarList[i].Id == id)
+        //             {
+        //                 index = i;
+        //             }
+        //         }
+        //         regions.replaceRegion(sidebarList, index);
 
-            //     // check if game is over & end it if so:
-            //     if (regions.checkAllMatched())
-            //     {
-            //         // calculate final score
-            //         float elapsedSeconds = timer.getElapsedSeconds();
-            //         score.calculateFinalScore((int)elapsedSeconds, level);
+        //         // check if game is over & end it if so:
+        //         if (regions.checkAllMatched())
+        //         {
+        //             // calculate final score
+        //             float elapsedSeconds = timer.getElapsedSeconds();
+        //             score.calculateFinalScore((int)elapsedSeconds, level);
 
-            //         // update high score
-            //         if (score.currentScore > highScore)
-            //         {
-            //             highScore = score.currentScore;
-            //         }
+        //             // update high score
+        //             if (score.currentScore > highScore)
+        //             {
+        //                 highScore = score.currentScore;
+        //             }
 
-            //         // move to end page
-            //         SceneManager.LoadScene("EndMenu");
-            //     }
-            // }
-            // else
-            // {
-            //     score.updateScore(false);
-            // }
+        //             // move to end page
+        //             SceneManager.LoadScene("EndMenu");
+        //         }
+        //     }
+        //     else
+        //     {
+        //         score.updateScore(false);
+        //     }
         };
         
         foreach(Region r in regions)
