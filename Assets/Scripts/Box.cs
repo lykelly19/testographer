@@ -23,6 +23,7 @@ public class Box : MonoBehaviour
         set
         {
             label = value;
+            Debug.Log("Updating box " + this.name + " text to " + value);
             boxText.text = label;
         }
     }

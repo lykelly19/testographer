@@ -7,6 +7,8 @@ public class BoxList
     Box[] boxes;
     int hlIndex; // index of currently highlighted box
     int level;
+    // FIXME: list of key-value pairs with id as the key and abbreviation as the value
+
     public int Level
     {
         get
@@ -30,7 +32,7 @@ public class BoxList
     public void populateList()
     {
         // each box has a public id
-        Box[] boxes = Object.FindObjectsOfType<Box>();
+        boxes = Object.FindObjectsOfType<Box>();
 
         // retrieve the location of each box
         foreach (Box b in boxes)
@@ -38,21 +40,6 @@ public class BoxList
             b.X = b.transform.position.x;
             b.Y = b.transform.position.y;
             b.Level = level;
-        }
-
-    }
-    // updates Box highlight styling based on location
-    public void updateHighlight(float posX, float posY)
-    {
-        if (hlIndex >= 0)
-        {
-            boxes[hlIndex].unHighlight();
-        }
-        int newH = findLocationMatch(posX, posY);
-
-        if (newH >= 0 && newH < boxes.Length)
-        {
-            boxes[newH].highlight();
         }
     }
 
@@ -71,11 +58,11 @@ public class BoxList
         }
     }
 
-    /*
-     * Searches list for a Box with a matching location
-     * If found: return index
-     * If DNE: return -1
-    */
+    // /*
+    //  * Searches list for a Box with a matching location
+    //  * If found: return index
+    //  * If DNE: return -1
+    // */
     private int findLocationMatch(float posX, float posY)
     {
         for(int i = 0; i < boxes.Length; i++)
@@ -85,7 +72,7 @@ public class BoxList
 
             // Check if within certain radius
             // FIXME: pick a radius that makes sense. 0.1 was just a guess.
-            if(xDif < 0.1 && yDif < 0.1)
+            if(xDif < 0.5 && yDif < 0.5)
             {
                 return i;
             }
@@ -106,11 +93,12 @@ public class BoxList
         return null;
     }
 
-    // Resets Boxlist back to its original state.
-    public void reset()
-    {
-        boxes = System.Array.Empty<Box>();
-        hlIndex = -1;
-        populateList();
-    }
+    // // Resets Boxlist back to its original state.
+    // public void reset()
+    // {
+    //     boxes = System.Array.Empty<Box>();
+    //     hlIndex = -1;
+    //     populateList();
+    // }
+
 }

@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Nebraska
+  boxText: {fileID: 0}
 --- !u!1 &22496660
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Maryland
+  boxText: {fileID: 0}
 --- !u!1 &32726135
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Alabama
+  boxText: {fileID: 0}
 --- !u!1 &64206804
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Louisiana
+  boxText: {fileID: 0}
 --- !u!1 &89485187
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Minnesota
+  boxText: {fileID: 0}
 --- !u!1 &92940437
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Florida
+  boxText: {fileID: 0}
 --- !u!1 &241709412
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Illinois
+  boxText: {fileID: 0}
 --- !u!1 &593057489
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +989,7 @@ GameObject:
   - component: {fileID: 593057490}
   - component: {fileID: 593057492}
   - component: {fileID: 593057491}
+  - component: {fileID: 593057493}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1058,6 +1059,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593057489}
   m_CullTransparentMesh: 1
+--- !u!114 &593057493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593057489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb748b7f7ccdb36428862f3eaa84c644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &620515196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Nevada
+  boxText: {fileID: 0}
 --- !u!1 &865021244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Vermont
+  boxText: {fileID: 0}
 --- !u!1 &871221768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Idaho
+  boxText: {fileID: 0}
 --- !u!1 &889118584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Delaware
+  boxText: {fileID: 0}
 --- !u!1 &962340534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: California
+  boxText: {fileID: 0}
 --- !u!1 &964138812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Iowa
+  boxText: {fileID: 0}
 --- !u!1 &1000342275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,7 +1840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Wyoming
+  boxText: {fileID: 0}
 --- !u!1 &1008361572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Oklahoma
+  boxText: {fileID: 0}
 --- !u!1 &1016563926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,7 +2036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New Mexico
+  boxText: {fileID: 0}
 --- !u!1 &1042558755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Washington
+  boxText: {fileID: 0}
 --- !u!1 &1042775372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Virginia
+  boxText: {fileID: 0}
 --- !u!1 &1044117557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2330,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Utah
+  boxText: {fileID: 0}
+--- !u!1 &1171730210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171730211}
+  - component: {fileID: 1171730214}
+  - component: {fileID: 1171730213}
+  - component: {fileID: 1171730212}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1171730211
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171730210}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2336422, y: 4.071771, z: 2.2939577}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2061296932}
+  m_Father: {fileID: 1963312000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -9.5345, y: 0.513}
+  m_SizeDelta: {x: 26.0353, y: 21.409}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1171730212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171730210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1171730213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171730210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &1171730214
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171730210}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 620515198}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 3
+  m_TargetDisplay: 0
 --- !u!1 &1173848566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,7 +2529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: North Dakota
+  boxText: {fileID: 0}
 --- !u!1 &1242082882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,7 +2627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Connecticut
+  boxText: {fileID: 0}
 --- !u!1 &1260580707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,7 +2725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New Jersey
+  boxText: {fileID: 0}
 --- !u!1 &1317435830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Oregon
+  boxText: {fileID: 0}
 --- !u!1 &1347217936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,7 +3052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Wisconsin
+  boxText: {fileID: 0}
 --- !u!1 &1407305312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Texas
+  boxText: {fileID: 0}
 --- !u!1 &1433508459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,7 +3248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Indiana
+  boxText: {fileID: 0}
 --- !u!1 &1448343442
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,7 +3346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Michigan
+  boxText: {fileID: 0}
 --- !u!1 &1461990499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,7 +3538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Mississippi
+  boxText: {fileID: 0}
 --- !u!1 &1482321966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,7 +3636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New York
+  boxText: {fileID: 0}
 --- !u!1 &1485542097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: South Dakota
+  boxText: {fileID: 0}
 --- !u!1 &1492989555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,7 +3832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Alaska
+  boxText: {fileID: 0}
 --- !u!1 &1494887412
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,7 +3930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Arizona
+  boxText: {fileID: 0}
 --- !u!1 &1502904285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,7 +4028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: North Carolina
+  boxText: {fileID: 0}
 --- !u!1 &1550926770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,7 +4126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: South Carolina
+  boxText: {fileID: 0}
 --- !u!1 &1627348164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,7 +4308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Ohio
+  boxText: {fileID: 0}
 --- !u!1 &1652957635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,7 +4406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Kansas
+  boxText: {fileID: 0}
 --- !u!1 &1671590768
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,7 +4504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Montana
+  boxText: {fileID: 0}
 --- !u!1 &1687444297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4488,7 +4602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Maine
+  boxText: {fileID: 0}
 --- !u!1 &1705279705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4586,7 +4700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Kentucky
+  boxText: {fileID: 0}
 --- !u!1 &1718031536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4684,7 +4798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Arkansas
+  boxText: {fileID: 0}
 --- !u!1 &1734880069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,7 +4808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734880071}
-  - component: {fileID: 1734880070}
+  - component: {fileID: 1734880072}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -4702,20 +4816,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1734880070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734880069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999e3b40c68e74bec82b71244d823109, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 620515198}
-  labelFont: {fileID: 12800000, guid: e25a6029074067e4e9f0eab4a6a6da9e, type: 3}
 --- !u!4 &1734880071
 Transform:
   m_ObjectHideFlags: 0
@@ -4731,6 +4831,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734880072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734880069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37b6aeb653442b4d8cba3b658aba1ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 620515198}
+  labelFont: {fileID: 12800000, guid: e25a6029074067e4e9f0eab4a6a6da9e, type: 3}
+  highScore: 0
 --- !u!1 &1740455539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,7 +5027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: West Virginia
+  boxText: {fileID: 0}
 --- !u!1 &1862960601
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,7 +5125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: New Hampshire
+  boxText: {fileID: 0}
 --- !u!1 &1864070929
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,7 +5307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Rhode Island
+  boxText: {fileID: 0}
 --- !u!1 &1963311998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,7 +5389,8 @@ Transform:
   m_LocalPosition: {x: 7.86, y: 2.79, z: 0}
   m_LocalScale: {x: 0.8106078, y: 0.24559337, z: 0.43592787}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1171730211}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5290,7 +5406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Massachusetts
+  boxText: {fileID: 2061296933}
 --- !u!1 &1998417443
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,7 +5504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Colorado
+  boxText: {fileID: 0}
 --- !u!1 &2022990527
 GameObject:
   m_ObjectHideFlags: 0
@@ -5486,7 +5602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Missouri
+  boxText: {fileID: 0}
 --- !u!1 &2045201924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,6 +5687,100 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2061296931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061296932}
+  - component: {fileID: 2061296934}
+  - component: {fileID: 2061296933}
+  - component: {fileID: 2061296935}
+  m_Layer: 5
+  m_Name: MAText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2061296932
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061296931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1171730211}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.7321, y: -0.1355}
+  m_SizeDelta: {x: 61.0945, y: 27.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2061296933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061296931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &2061296934
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061296931}
+  m_CullTransparentMesh: 1
+--- !u!114 &2061296935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061296931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxText: {fileID: 2061296933}
 --- !u!1 &2069245495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5668,7 +5878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Pennsylvania
+  boxText: {fileID: 0}
 --- !u!1 &2070130257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,7 +5976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Georgia
+  boxText: {fileID: 0}
 --- !u!1 &2125428990
 GameObject:
   m_ObjectHideFlags: 0
@@ -5864,7 +6074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Tennessee
+  boxText: {fileID: 0}
 --- !u!1 &2146587464
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,4 +6172,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695294998a8262548a5fc3c107063ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Hawaii
+  boxText: {fileID: 0}
