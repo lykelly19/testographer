@@ -125,10 +125,10 @@ public class GameManager : MonoBehaviour
             if (t.name == "HighScoreDisplay")
             {
                 highScoreText = t;
+                highScoreText.text = "High Score: " + System.Convert.ToString(highScore);
                 break;
             }
         }
-        highScoreText.text = "High Score: 0";
     }
 
     // Update is called once per frame.
