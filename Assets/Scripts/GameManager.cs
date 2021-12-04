@@ -10,23 +10,6 @@ public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
     int chosenDifficulty;
-<<<<<<< HEAD
-    
-    // GameManager constructor.
-    public GameManager()
-    {
-        // currentMap = new Map("UnitedStates", -1);
-        chosenDifficulty = -1;
-    }
-
-
-    /*
-    Function to call from the map menu to choose map.
-    Input: the name of the map, which matches the name stored in one of the map objects.
-    Result: chosenMap is updated
-    */
-    public void chooseMap() 
-=======
     Map currentMap = null;
     Score score = null;
     int highScore = 0;
@@ -43,7 +26,6 @@ public class GameManager : MonoBehaviour
 
     // GameManager constructor.
     public GameManager()
->>>>>>> 978db386e53598be6e7dd972924a66a0296b0316
     {
         // currentMap = new Map("UnitedStates", -1);
         chosenDifficulty = -1;
@@ -63,12 +45,7 @@ public class GameManager : MonoBehaviour
             Console.WriteLine("Error, invalid level in chooseDifficulty. Exiting . . .");
             System.Environment.Exit(-1);
         }
-<<<<<<< HEAD
-
-        playGame();
-=======
         SceneManager.LoadScene("GamePage");
->>>>>>> 978db386e53598be6e7dd972924a66a0296b0316
     }
 
 
