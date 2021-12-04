@@ -10,13 +10,11 @@ public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
     int chosenDifficulty;
-    Map currentMap;
-    Score score;
+    Map currentMap = null;
+    Score score = null;
     int highScore = 0;
     public Text endScoreText;
     public Text gameScoreText;
-
-    bool isPlaying;
 
     public Map CurrentMap
     {
@@ -50,7 +48,7 @@ public class GameManager : MonoBehaviour
     Input: the level, an integer
     Result: chosenDifficulty = level
     */
-    async public void chooseDifficulty(int level) 
+    public void chooseDifficulty(int level) 
     {
         if(level >= 0 && level <= 1) { // Make sure is valid level
             chosenDifficulty = level;
@@ -59,25 +57,9 @@ public class GameManager : MonoBehaviour
             Console.WriteLine("Error, invalid level in chooseDifficulty. Exiting . . .");
             System.Environment.Exit(-1);
         }
-
-        StartCoroutine(loadGamePage());
-        //SceneManager.LoadScene("GamePage");
-        playGame();
+        SceneManager.LoadScene("GamePage");
     }
 
-    IEnumerator loadGamePage()
-    {
-        Debug.Log("loadGamePage called");
-        AsyncOperation loadMap = SceneManager.LoadSceneAsync("GamePage");
-        Debug.Log("isDone: " + loadMap.isDone);
-        while (!loadMap.isDone)
-        {
-            Debug.Log("loadGamePage while loop entered: " + loadMap.isDone);
-            yield return null;
-        }
-        Debug.Log("Calling playGame()");
-        playGame();
-    }
 
     // Loads the scene passed as parameter
     public void changeScene(string nextScene) 
@@ -102,9 +84,7 @@ public class GameManager : MonoBehaviour
     void playGame()
     {
         currentMap = FindObjectsOfType<Map>()[0];
-
-        // Change scene to the game.
-        Debug.Log("Finding Score object");
+        
         score = FindObjectsOfType<Score>()[0];
 
         gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
@@ -120,8 +100,6 @@ public class GameManager : MonoBehaviour
                 highScore = score.CurrentScore;
             }
 
-            isPlaying = false;
-
             // move to end page
             SceneManager.LoadScene("EndMenu");
         };
@@ -132,10 +110,6 @@ public class GameManager : MonoBehaviour
         };
 
         currentMap.updateIsDroppedCallback();
-
-        isPlaying = true;
-
-        Debug.Log("End of playGame function");
     }
 
 
@@ -164,11 +138,14 @@ public class GameManager : MonoBehaviour
     // Required by Unity for this object.
     void Update()
     {
-        if(isPlaying)
-        {
+        if (score != null) {
             gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
         }
-        // Debug.Log(SceneManager.GetActiveScene().name);
-        // Stuff for every frame after the first frame.
+
+        if ((FindObjectsOfType<Score>().Length > 0 || FindObjectsOfType<Map>().Length > 0)
+            && currentMap == null)
+        {
+            playGame();
+        }
     }
 }

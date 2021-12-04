@@ -40,9 +40,6 @@ public class Region : MonoBehaviour
 
             if(Input.GetMouseButtonUp(0)) {
                 dragging = false;
-                Debug.Log("Mouse button up");
-                Debug.Log(this);
-                Debug.Log(isDroppedCallback);
                 isDroppedCallback(id, transform.position);
             }
         }

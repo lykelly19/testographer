@@ -17,7 +17,6 @@ public class Map : MonoBehaviour
     Region[] sidebarList;
 
     Timer timer;
-    Score score;
 
     public System.Action<Timer> OnEndGame
     {
@@ -37,11 +36,9 @@ public class Map : MonoBehaviour
 
     public void updateIsDroppedCallback()
     {
-        Debug.Log("updateIsDroppedCallback called");
         isDroppedCallback = (string id, Vector2 location) =>
         {
             string match = boxes.findBoxMatch(location);
-            Debug.Log(match); // DELETE ME
 
             if (match == id)
             {
@@ -82,9 +79,6 @@ public class Map : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Map.Start() entered");
-        Debug.Log(SceneManager.GetActiveScene().name);
-
         float[] yPosArr = new float[] { 3.16f, 2.38f, 1.57f, 0.73f, -0.06f, -0.87f, -1.69f, -2.51f, -3.35f, -4.14f };
         string[] yPosArr2 = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
         
@@ -105,7 +99,6 @@ public class Map : MonoBehaviour
 
         // Get Regions in sidebar
         sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
-        Debug.Log("Map.Start() complete!");
     }
 
 
