@@ -116,7 +116,7 @@ public class Map : MonoBehaviour
 
         SpriteRenderer renderer = go1.AddComponent<SpriteRenderer>();
         renderer.sprite = Resources.Load<Sprite>("Images/Square");
-        renderer.sortingOrder = 3;
+        renderer.sortingOrder = 4;
 
         // Set Color
         renderer.material.color = new Color(0.0f, 0.42f, 0.54f, 1);
@@ -153,7 +153,7 @@ public class Map : MonoBehaviour
         myText = new GameObject();
         myText.transform.parent = myGO.transform;
         myText.name = gameObjectName;
-        myText.transform.position = new Vector2(xPos, yPos-0.32f);
+        myText.transform.position = new Vector2(xPos-0.2f, yPos-0.32f);
 
         text = myText.AddComponent<Text>();
         text.text = displayText;
