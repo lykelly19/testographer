@@ -11,6 +11,9 @@ public class Region : MonoBehaviour
     public bool dragging = false;
     private Vector2 originalPosition;
 
+    public bool dragging = false;
+    private Vector2 originalPosition;
+
     public void Start()
     {
         originalPosition = transform.position;
@@ -29,7 +32,7 @@ public class Region : MonoBehaviour
     //     }
     // }
 
-    // Update is called once per frame
+     // Update is called once per frame
     void Update()
     {
         if (dragging)
