@@ -7,6 +7,7 @@ public class BoxList
     Box[] boxes;
     int hlIndex; // index of currently highlighted box
     int level;
+    // FIXME: list of key-value pairs with id as the key and abbreviation as the value
 
     public int Level
     {
@@ -71,7 +72,7 @@ public class BoxList
 
             // Check if within certain radius
             // FIXME: pick a radius that makes sense. 0.1 was just a guess.
-            if(xDif < 0.1 && yDif < 0.1)
+            if(xDif < 0.5 && yDif < 0.5)
             {
                 return i;
             }

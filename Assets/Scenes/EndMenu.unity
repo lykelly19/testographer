@@ -270,6 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endScoreText: {fileID: 0}
+  gameScoreText: {fileID: 0}
 --- !u!1 &104576942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endScoreText: {fileID: 0}
+  gameScoreText: {fileID: 0}
 --- !u!1 &526698656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Score: originalScore x levelMultiplier + timeBonus = finalScore'
+  m_Text: 
 --- !u!222 &853521263
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1546,10 +1550,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 853521260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc835d657f2bc324abc9f8e0996f0c90, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 853521262}
+  endScoreText: {fileID: 853521262}
+  gameScoreText: {fileID: 0}
 --- !u!1 &1059281186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endScoreText: {fileID: 0}
+  gameScoreText: {fileID: 0}
 --- !u!1 &1238065445
 GameObject:
   m_ObjectHideFlags: 0

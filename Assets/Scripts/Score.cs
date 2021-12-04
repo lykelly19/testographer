@@ -6,22 +6,27 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     // Variables with get and set functions.
-    public int currentScore 
+    int currentScore;
+    int originalScore;
+    int timeBonus;
+    int levelMultiplier;
+
+    public int CurrentScore 
     { 
         get { return currentScore; }
         set { currentScore = value; }
     }
-    public int originalScore 
+    public int OriginalScore 
     { 
         get { return originalScore; }
         set { originalScore = value; }
     }
-    public int timeBonus 
+    public int TimeBonus 
     {
         get { return timeBonus; }
         set { timeBonus = value; }
     }
-    public int levelMultiplier 
+    public int LevelMultiplier 
     { 
         get { return levelMultiplier; }
         set { levelMultiplier = value; }
@@ -90,5 +95,10 @@ public class Score : MonoBehaviour
         // Multiplier is applied BEFORE time bonus is added.
         currentScore *= levelMultiplier;
         currentScore += timeBonus;
+    }
+
+    public string getEndScoreDisplay()
+    {
+        return "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + currentScore;
     }
 }

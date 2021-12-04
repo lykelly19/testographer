@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;  // for changing scenes
 
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
     int chosenDifficulty;
+<<<<<<< HEAD
     
     // GameManager constructor.
     public GameManager()
@@ -24,9 +26,27 @@ public class GameManager : MonoBehaviour
     Result: chosenMap is updated
     */
     public void chooseMap() 
+=======
+    Map currentMap = null;
+    Score score = null;
+    int highScore = 0;
+    public Text endScoreText;
+    public Text gameScoreText;
+
+    public Map CurrentMap
     {
-        // change the scene to LevelMenu
-        SceneManager.LoadScene("LevelMenu");
+        get
+        {
+            return currentMap;
+        }
+    }
+
+    // GameManager constructor.
+    public GameManager()
+>>>>>>> 978db386e53598be6e7dd972924a66a0296b0316
+    {
+        // currentMap = new Map("UnitedStates", -1);
+        chosenDifficulty = -1;
     }
 
     /*
@@ -43,9 +63,14 @@ public class GameManager : MonoBehaviour
             Console.WriteLine("Error, invalid level in chooseDifficulty. Exiting . . .");
             System.Environment.Exit(-1);
         }
+<<<<<<< HEAD
 
         playGame();
+=======
+        SceneManager.LoadScene("GamePage");
+>>>>>>> 978db386e53598be6e7dd972924a66a0296b0316
     }
+
 
     // Loads the scene passed as parameter
     public void changeScene(string nextScene) 
@@ -59,43 +84,42 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    // Gets the new map and changes the scene.
-    public void mapMenuOnClick(string nextScene, string mapName)
-    {
-        chooseMap();
-        SceneManager.LoadScene(nextScene);
-    }
-
-    // Gets the difficulty and changes the scene.
-    public void levelMenuOnClick(string nextScene, int level)
-    {
-        chooseDifficulty(level);
-        SceneManager.LoadScene(nextScene);
-    }
-
     // Does everything the game needs to do in a single frame.
     void playGame()
     {
-        // Change scene to the game.
-        SceneManager.LoadScene("GamePage");
+        currentMap = FindObjectsOfType<Map>()[0];
+        
+        score = FindObjectsOfType<Score>()[0];
 
-        // Game stuff
+        gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
+
+        currentMap.OnEndGame = (Timer timer) =>
+        {
+            float elapsedSeconds = timer.getElapsedSeconds();
+            score.calculateFinalScore((int)elapsedSeconds, chosenDifficulty);
+
+            // update high score
+            if (score.CurrentScore > highScore)
+            {
+                highScore = score.CurrentScore;
+            }
+
+            // move to end page
+            SceneManager.LoadScene("EndMenu");
+        };
+
+        currentMap.OnUpdateScore = (bool isMatch) =>
+        {
+            score.updateScore(isMatch);
+        };
+
+        currentMap.updateIsDroppedCallback();
+    }
 
 
-        // code structure for checking high score & displaying message
-        /*
-        bool isHighScore;
-
-        // check if high score
-        if(currentScore > chosenMap.HighScore) {
-            isHighScore = true;
-        }
-
-        if(isHighScore) {
-            chosenMap.updateHighScore(); 
-            displayHighScoreMessage();
-        }
-        */
+    public void setEndScore()
+    {
+        endScoreText.text = score.getEndScoreDisplay();
     }
 
     // displaying the high score message (code structure)
@@ -118,7 +142,14 @@ public class GameManager : MonoBehaviour
     // Required by Unity for this object.
     void Update()
     {
-        // Debug.Log(SceneManager.GetActiveScene().name);
-        // Stuff for every frame after the first frame.
+        if (score != null) {
+            gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
+        }
+
+        if ((FindObjectsOfType<Score>().Length > 0 || FindObjectsOfType<Map>().Length > 0)
+            && currentMap == null)
+        {
+            playGame();
+        }
     }
 }
