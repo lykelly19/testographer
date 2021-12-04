@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     int highScore = 0;
     public Text endScoreText;
     public Text gameScoreText;
+    public Text highScoreText;
 
     public Map CurrentMap
     {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         // currentMap = new Map("UnitedStates", -1);
         chosenDifficulty = -1;
+        highScoreText.text = "0";
     }
 
     /*
