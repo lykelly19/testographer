@@ -31,18 +31,6 @@ public class GameManager : MonoBehaviour
         chosenDifficulty = -1;
     }
 
-
-    /*
-    Function to call from the map menu to choose map.
-    Input: the name of the map, which matches the name stored in one of the map objects.
-    Result: chosenMap is updated
-    */
-    public void chooseMap() 
-    {
-        // change the scene to LevelMenu
-        SceneManager.LoadScene("LevelMenu");
-    }
-
     /*
     Function to call from the level menu to choose level.
     Input: the level, an integer
@@ -71,13 +59,6 @@ public class GameManager : MonoBehaviour
     public void exitGame()
     {
         Application.Quit();
-    }
-
-    // Gets the new map and changes the scene.
-    public void mapMenuOnClick(string nextScene, string mapName)
-    {
-        chooseMap();
-        SceneManager.LoadScene(nextScene);
     }
 
     // Does everything the game needs to do in a single frame.
