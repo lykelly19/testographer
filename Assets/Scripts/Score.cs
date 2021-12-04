@@ -96,4 +96,9 @@ public class Score : MonoBehaviour
         currentScore *= levelMultiplier;
         currentScore += timeBonus;
     }
+
+    public string getEndScoreDisplay()
+    {
+        return "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + currentScore;
+    }
 }

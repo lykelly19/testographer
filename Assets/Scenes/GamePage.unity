@@ -990,6 +990,7 @@ GameObject:
   - component: {fileID: 593057492}
   - component: {fileID: 593057491}
   - component: {fileID: 593057493}
+  - component: {fileID: 593057494}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1050,7 +1051,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: 
 --- !u!222 &593057492
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1071,6 +1072,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb748b7f7ccdb36428862f3eaa84c644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &593057494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593057489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endScoreText: {fileID: 0}
+  gameScoreText: {fileID: 593057491}
 --- !u!1 &620515196
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,7 +4860,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 620515198}
   labelFont: {fileID: 12800000, guid: e25a6029074067e4e9f0eab4a6a6da9e, type: 3}
-  highScore: 0
 --- !u!1 &1740455539
 GameObject:
   m_ObjectHideFlags: 0
