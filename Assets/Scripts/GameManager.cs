@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     int highScore = 0;
     public Text endScoreText;
     public Text gameScoreText;
+    public Text highScoreText;
 
     public Map CurrentMap
     {
@@ -27,7 +28,6 @@ public class GameManager : MonoBehaviour
     // GameManager constructor.
     public GameManager()
     {
-        // currentMap = new Map("UnitedStates", -1);
         chosenDifficulty = -1;
     }
 
@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviour
         currentMap.OnUpdateScore = (bool isMatch) =>
         {
             score.updateScore(isMatch);
+            if(score.CurrentScore > highScore)
+            {
+                highScore = score.CurrentScore;
+                highScoreText.text = "High Score: " + System.Convert.ToString(score.CurrentScore);
+            }
         };
 
         currentMap.updateIsDroppedCallback();
@@ -113,6 +118,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1920, 1080, false);  // set screen width & height
+
+        Text[] texts = FindObjectsOfType<Text>();
+        foreach(Text t in texts)
+        {
+            if (t.name == "HighScoreDisplay")
+            {
+                highScoreText = t;
+                break;
+            }
+        }
+        highScoreText.text = "High Score: 0";
     }
 
     // Update is called once per frame.
