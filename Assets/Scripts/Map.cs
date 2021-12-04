@@ -154,13 +154,14 @@ public class Map : MonoBehaviour
         myText = new GameObject();
         myText.transform.parent = myGO.transform;
         myText.name = gameObjectName;
-        myText.transform.position = new Vector2(xPos+0.1f, yPos-0.32f);
+        myText.transform.position = new Vector2(xPos, yPos);
 
         region.Label = myText.AddComponent<Text>();
         region.Label.text = displayText;
         region.Label.fontSize = 20;
         region.Label.verticalOverflow = VerticalWrapMode.Overflow;
         region.Label.font = labelFont;
+        region.Label.alignment = TextAnchor.MiddleCenter;
         region.Label.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 100);
 
         myText.GetComponent<RectTransform>().localScale = new Vector3(0.01f, 0.01f, 0.01f);
