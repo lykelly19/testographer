@@ -48,7 +48,7 @@ public class Map : MonoBehaviour
         sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
     
 
-        rList.IsDroppedCallback = (string id, Vector2 location) =>
+        isDroppedCallback = (string id, Vector2 location) =>
         {
             string match = boxes.findBoxMatch(location);
             Debug.Log(match);
@@ -60,44 +60,43 @@ public class Map : MonoBehaviour
 
                 // update box label
                 boxes.updateBoxLabel(id);
+
+                // replace with unmatched region
+                int index = -1;
+                for (int i = 0; i < sidebarList.Length; i++)
+                {
+                    if (sidebarList[i].Id == id)
+                    {
+                        index = i;
+                    }
+                }
+                rList.getReplacementId(sidebarList, id);
+
+                // check if game is over & end it if so:
+                if (rList.allMatched())
+                {
+                    // // calculate final score
+                    // float elapsedSeconds = timer.getElapsedSeconds();
+                    // score.calculateFinalScore((int)elapsedSeconds, level);
+
+                    // // update high score
+                    // if (score.CurrentScore > highScore)
+                    // {
+                    //     highScore = score.CurrentScore;
+                    // }
+
+                    // move to end page
+                    SceneManager.LoadScene("EndMenu");
+                }
             }
-
-        //         // replace with unmatched region
-        //         int index = -1;
-        //         for (int i = 0; i < sidebarList.Count; i++)
-        //         {
-        //             if (sidebarList[i].Id == id)
-        //             {
-        //                 index = i;
-        //             }
-        //         }
-        //         regions.replaceRegion(sidebarList, index);
-
-        //         // check if game is over & end it if so:
-        //         if (regions.checkAllMatched())
-        //         {
-        //             // calculate final score
-        //             float elapsedSeconds = timer.getElapsedSeconds();
-        //             score.calculateFinalScore((int)elapsedSeconds, level);
-
-        //             // update high score
-        //             if (score.currentScore > highScore)
-        //             {
-        //                 highScore = score.currentScore;
-        //             }
-
-        //             // move to end page
-        //             SceneManager.LoadScene("EndMenu");
-        //         }
-        //     }
-        //     else
-        //     {
-        //         score.updateScore(false);
-        //     }
+            else
+            {
+                // score.updateScore(false);
+            }
         };
 
         foreach (Region r in sidebarList)
-            r.IsDroppedCallback = rList.IsDroppedCallback;
+            r.IsDroppedCallback = isDroppedCallback;
     }
 
 

@@ -4,203 +4,167 @@ using UnityEngine;
 
 public class RegionList
 {
-    
+
     // DECLARATIONS
-    List<Region> regions;
-    System.Action<string, Vector2> isDroppedCallback;
+    List<string> unmatched;
+    List<string> matched;
 
 
     public RegionList()
     {
-        regions = new List<Region>();
-        // populateList();
-    }
+        unmatched = new List<string>();
+        matched = new List<string>();
 
-    public System.Action<string, Vector2> IsDroppedCallback {
-        get
-        {
-            return isDroppedCallback;
-        }
-        set {
-            isDroppedCallback = value;
-            foreach(Region r in regions) {
-                r.IsDroppedCallback = isDroppedCallback;
-            }
-        }
+        unmatched.Add("Maine");
+        unmatched.Add("New Hampshire");
+        unmatched.Add("Vermont");
+        unmatched.Add("Massachusetts");
+        unmatched.Add("New York");
+        unmatched.Add("Rhode Island");
+        unmatched.Add("Connecticut");
+        unmatched.Add("Pennsylvania");
+        unmatched.Add("New Jersey");
+        unmatched.Add("Delaware");
+        unmatched.Add("Maryland");
+        unmatched.Add("West Virginia");
+        unmatched.Add("Virginia");
+        unmatched.Add("Ohio");
+        unmatched.Add("Michigan");
+        unmatched.Add("Indiana");
+        unmatched.Add("Illinois");
+        unmatched.Add("Wisconsin");
+        unmatched.Add("Iowa");
+        unmatched.Add("Minnesota");
+        unmatched.Add("North Dakota");
+        unmatched.Add("South Dakota");
+        unmatched.Add("Montana");
+        unmatched.Add("Wyoming");
+        unmatched.Add("Idaho");
+        unmatched.Add("Oregon");
+        unmatched.Add("Washington");
+        unmatched.Add("California");
+        unmatched.Add("Nevada");
+        unmatched.Add("Utah");
+        unmatched.Add("Arizona");
+        unmatched.Add("Colorado");
+        unmatched.Add("New Mexico");
+        unmatched.Add("Kansas");
+        unmatched.Add("Oklahoma");
+        unmatched.Add("Texas");
+        unmatched.Add("Missouri");
+        unmatched.Add("Arkansas");
+        unmatched.Add("Louisiana");
+        unmatched.Add("Mississippi");
+        unmatched.Add("Alabama");
+        unmatched.Add("Georgia");
+        unmatched.Add("Florida");
+        unmatched.Add("Tennessee");
+        unmatched.Add("North Carolina");
+        unmatched.Add("South Carolina");
+        unmatched.Add("Kentucky");
+        unmatched.Add("Alaska");
+        unmatched.Add("Hawaii");
+        unmatched.Add("Nebraska");
     }
 
     // METHODS
-    // public RegionList(System.Action<string, Vector2> isDropped)
-    // {
-    //     regions = new List<Region>();
-    //     populateList();
-    //     isDroppedCallback = isDropped;
-    // }
 
-    // Reads data from file at filePath and populates RegionList with it
-    // private void populateList()
-    // {
-    //     // temporary data 
-    //      string[] data = new string[] { "Maine", "Connecticut", "Pennsylvania", "New Jersey",
-    //     "Delaware","New Hampshire","Vermont","Massachusetts","New York","Rhode Island"};
+    // Checks if Region has the id
+    private bool checkIdMatch(string regionID, string checkID)
+    {
+        if (regionID == checkID)
+        {
+            return true;
+        }
+       return false;
+    }
 
-    //     for(int i=0; i<10; i++) {
-    //         regions.Add(new Region() { Id = data[i], IsMatched = false, IsDroppedCallback = isDroppedCallback });
-    //         Debug.Log(regions[i].Id);
-    //     }
-    // }
+    // moves region from unmatched to matched
+    private void setMatched(string id)
+    {
+        matched.Add(id);
+        unmatched.Remove(id);
+    }
+
+    /*
+    * generateSidebarList() => RegionList 
+    * Randomly generates a list of ten Regions and returns it
+    */
+
+    public List<string> generateSidebarList(int size)
+    {
+        List<string> sidebarList = new List<string>();
+
+        while (sidebarList.Count < size)
+        {
+            string id = getRandomUnmatched();
+
+            // make sure a string was returned and that it's not a duplicate id
+            if(id != null && !sidebarList.Exists(s => s == id))
+            {
+                sidebarList.Add(id);
+            }
+        }
+
+        return sidebarList;
+    }
+
+   // gets a new unmatched ID to put in the sidebarList
+    public string getReplacementId(Region[] sidebarList, string id)
+    {
+        string newId = null;
+
+        setMatched(id);
+
+        if(unmatched.Count < sidebarList.Length)
+        {
+            return null;
+        }
+
+        do
+        {
+            newId = getRandomUnmatched();
+        } while (newId != null && System.Array.Exists(sidebarList, r => r.Id == newId));
+        
+        return newId;
+    }
+    /*
+     * getRandomUnmatched() => string
+     * Picks a random item in unmatched and returns it
+     * */
+    private string getRandomUnmatched()
+    {
+        if (!allMatched())
+        {
+            var rand = new System.Random();
+            int index = rand.Next(unmatched.Count);
+
+            return unmatched[index];
+        }
+
+        return null;
+    }
+
+    public bool allMatched()
+    {
+        if(unmatched.Count <= 0)
+        {
+            return true;
+        }
+        return false;
+    }
+   
+
+    // Resets RegionList back to it's initial state.
+    public void reset()
+    {
+        foreach(string s in matched)
+        {
+            unmatched.Add(s);
+        }
+
+        matched.Clear();
+    }
 
 
-    // // Returns index of Region with matching ID
-    // public int findIdMatch(string id)
-    // {
-    //     for(int i = 0; i < regions.Count; i++)
-    //     {
-    //         if (checkIdMatch(regions[i], id))
-    //         {
-    //             return i;
-    //         }
-    //     }
-
-    //     return -1;
-    // }
-
-    // // Checks if Region has the id
-    // private bool checkIdMatch(Region r, string id)
-    // {
-    //     if (r.Id == id)
-    //     {
-    //         return true;
-    //     }
-    //     return false;
-    // }
-    
-    // // sets the isMatched flag to indicate that the Region at index i has been matched
-    // private void setMatched(int index, bool isMatched)
-    // {
-    //     if(index >= 0 && index < regions.Count)
-    //     {
-    //         regions[index].IsMatched = isMatched;
-    //     }
-    // }
-
-    // /*
-    //  * generateSidebarList() => RegionList 
-    //  * Randomly generates a list of ten Regions and returns it
-    //  */
-
-    // public List<Region> generateSidebarList(int size)
-    // {
-    //     List<Region> sidebarList = new List<Region>();
-
-    //     while (sidebarList.Count < size)
-    //     {
-    //         Region newR = getRandomUnmatched();
-
-    //         // make sure a string was returned and that it's not a duplicate id
-    //         if(newR != null && !sidebarList.Exists(s => s.Id == newR.Id))
-    //         {
-    //             sidebarList.Add(newR);
-    //         }
-    //     }
-
-    //     return sidebarList;
-    // }
-
-    // // Replaces marks a Region and matched and replaces it in the sidebarList. if there's no unmatched
-    // // regions left, it is simply removed from sidebarList.
-    // public List<Region> replaceRegion(List<Region> sidebarList, int index)
-    // {
-    //     int regionIndex = findIdMatch(sidebarList[index].Id);
-
-    //     if(regionIndex >= 0 && regionIndex < regions.Count)
-    //     {
-    //         setMatched(regionIndex, true);
-
-    //         Region newR = getRandomUnmatched();
-    //         if(newR != null && findIdMatch(sidebarList, newR.Id) == -1)
-    //         {
-    //             sidebarList[index] = newR;
-    //         } 
-    //         else if (newR == null)
-    //         {
-    //             sidebarList.RemoveAt(index);
-    //         }
-    //     }
-
-    //     return sidebarList;
-    // }
-    // /*
-    //  * getRandomUnmatched() => Region
-    //  * Picks a random item in unmatched and returns it
-    //  * */
-    // private Region getRandomUnmatched()
-    // {
-    //     var rand = new System.Random();
-
-    //     List<Region> unmatched = getUnmatchedList();
-
-    //     if (unmatched == null)
-    //     {
-    //         return null;
-    //     }
-
-    //     int index = rand.Next(unmatched.Count);
-
-    //     return unmatched[index];
-    // }
-
-    // public bool checkAllMatched()
-    // {
-    //     if(getUnmatchedList() == null)
-    //     {
-    //         return true;
-    //     }
-    //     return false;
-    // }
-    // private List<Region> getUnmatchedList()
-    // {
-    //     List<Region> unmatched = new List<Region>();
-
-    //     for(int i = 0; i < regions.Count; i++)
-    //     {
-    //         if (!regions[i].IsMatched)
-    //         {
-    //             unmatched.Add(regions[i]);
-    //         }
-    //     }
-
-    //     if (unmatched.Count < 1)
-    //     {
-    //         return null;
-    //     }
-
-    //     return unmatched;
-    // }
-
-    // // Returns index of Region with matching ID
-    // public int findIdMatch(List<Region> sidebarList, string id)
-    // {
-    //     for (int i = 0; i < regions.Count; i++)
-    //     {
-    //         if (checkIdMatch(regions[i], id))
-    //         {
-    //             return i;
-    //         }
-    //     }
-
-    //     return -1;
-    // }
-
-    // // Resets RegionList back to it's initial state.
-    // public void reset()
-    // {
-    //     // Sets every regions IsMatched to false.
-    //     for(int i = 0; i < regions.Count; i++)
-    //     {
-    //         regions[i].IsMatched = false;
-    //     }
-    // }
-
-    
 }
