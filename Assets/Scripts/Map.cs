@@ -45,8 +45,7 @@ public class Map : MonoBehaviour
                 // update score
                 onUpdateScore(true);
 
-                // update box label
-                boxes.updateBoxLabel(id);
+                
 
                 // replace with unmatched region
                 int index = -1;
@@ -57,7 +56,10 @@ public class Map : MonoBehaviour
                         index = i;
                     }
                 }
-                rList.getReplacementId(sidebarList, id);
+                sidebarList[index].Id = rList.getReplacementId(sidebarList, id);
+
+                // update box label
+                boxes.updateBoxLabel(id);
 
                 // check if game is over & end it if so:
                 if (rList.allMatched())
@@ -148,19 +150,18 @@ public class Map : MonoBehaviour
 
         // Text
         GameObject myText;
-        Text text;
 
         myText = new GameObject();
         myText.transform.parent = myGO.transform;
         myText.name = gameObjectName;
         myText.transform.position = new Vector2(xPos+0.1f, yPos-0.32f);
 
-        text = myText.AddComponent<Text>();
-        text.text = displayText;
-        text.fontSize = 20;
-        text.verticalOverflow = VerticalWrapMode.Overflow;
-        text.font = labelFont;
-        text.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 100);
+        region.Label = myText.AddComponent<Text>();
+        region.Label.text = displayText;
+        region.Label.fontSize = 20;
+        region.Label.verticalOverflow = VerticalWrapMode.Overflow;
+        region.Label.font = labelFont;
+        region.Label.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 100);
 
         myText.GetComponent<RectTransform>().localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
