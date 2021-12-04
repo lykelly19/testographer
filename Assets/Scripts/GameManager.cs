@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
 {
     // Variable for when Map class is finished.
     int chosenDifficulty;
-    Map currentMap;
-    Score score;
+    Map currentMap = null;
+    Score score = null;
+    int highScore = 0;
     public Text endScoreText;
+    public Text gameScoreText;
 
     public Map CurrentMap
     {
@@ -55,9 +57,9 @@ public class GameManager : MonoBehaviour
             Console.WriteLine("Error, invalid level in chooseDifficulty. Exiting . . .");
             System.Environment.Exit(-1);
         }
-
-        playGame();
+        SceneManager.LoadScene("GamePage");
     }
+
 
     // Loads the scene passed as parameter
     public void changeScene(string nextScene) 
@@ -78,48 +80,42 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(nextScene);
     }
 
-    // Gets the difficulty and changes the scene.
-    public void levelMenuOnClick(string nextScene, int level)
-    {
-        chooseDifficulty(level);
-        SceneManager.LoadScene(nextScene);
-    }
-
     // Does everything the game needs to do in a single frame.
     void playGame()
     {
-        // Change scene to the game.
-        SceneManager.LoadScene("GamePage");
-
-        // score = FindObjectsOfType<Score>()[0];
         currentMap = FindObjectsOfType<Map>()[0];
+        
+        score = FindObjectsOfType<Score>()[0];
 
-        // Game stuff
+        gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
 
+        currentMap.OnEndGame = (Timer timer) =>
+        {
+            float elapsedSeconds = timer.getElapsedSeconds();
+            score.calculateFinalScore((int)elapsedSeconds, chosenDifficulty);
 
-        // code structure for checking high score & displaying message
-        /*
-        bool isHighScore;
+            // update high score
+            if (score.CurrentScore > highScore)
+            {
+                highScore = score.CurrentScore;
+            }
 
-        // check if high score
-        if(currentScore > chosenMap.HighScore) {
-            isHighScore = true;
-        }
+            // move to end page
+            SceneManager.LoadScene("EndMenu");
+        };
 
-        if(isHighScore) {
-            chosenMap.updateHighScore(); 
-            displayHighScoreMessage();
-        }
-        */
+        currentMap.OnUpdateScore = (bool isMatch) =>
+        {
+            score.updateScore(isMatch);
+        };
+
+        currentMap.updateIsDroppedCallback();
     }
 
-    public void displayEndScore()
+
+    public void setEndScore()
     {
-        int originalScore = score.OriginalScore;
-        int levelMultiplier = score.LevelMultiplier;
-        int timeBonus = score.TimeBonus;
-        int finalScore = score.CurrentScore;
-        endScoreText.text = "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + finalScore;
+        endScoreText.text = score.getEndScoreDisplay();
     }
 
     // displaying the high score message (code structure)
@@ -142,7 +138,14 @@ public class GameManager : MonoBehaviour
     // Required by Unity for this object.
     void Update()
     {
-        // Debug.Log(SceneManager.GetActiveScene().name);
-        // Stuff for every frame after the first frame.
+        if (score != null) {
+            gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
+        }
+
+        if ((FindObjectsOfType<Score>().Length > 0 || FindObjectsOfType<Map>().Length > 0)
+            && currentMap == null)
+        {
+            playGame();
+        }
     }
 }

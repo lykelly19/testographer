@@ -8,55 +8,42 @@ public class Map : MonoBehaviour
 {
     public Camera mainCamera;
     public Font labelFont;
-    public int highScore = 0;
     System.Action<string, Vector2> isDroppedCallback;
+    System.Action<Timer> onEndGame;
+    System.Action<bool> onUpdateScore;
 
     BoxList boxes;
     RegionList rList;
     Region[] sidebarList;
 
     Timer timer;
-    Score score;
 
-    // Start is called before the first frame update
-    void Start()
+    public System.Action<Timer> OnEndGame
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
-
-        float[] yPosArr = new float[] { 3.16f, 2.38f, 1.57f, 0.73f, -0.06f, -0.87f, -1.69f, -2.51f, -3.35f, -4.14f };
-        string[] yPosArr2 = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
-        
-        // temporary backend - instead we would randomly generate 10 different states & mark which have been selected in a list
-        string[] allText = new string[] { "Massachusetts", "a", "b", "c", "d", "e", "f", "g", "h", "i" };
-
-        // create the first 10 label objects
-        for(int i=0; i<10; i++) {
-            createRegionLabelObject(yPosArr2[i], allText[i], -7.27f, yPosArr[i]);
+        set
+        {
+            onEndGame = value;
         }
+    }
 
+    public System.Action<bool> OnUpdateScore
+    {
+        set
+        {
+            onUpdateScore = value;
+        }
+    }
 
-        Timer[] timers = FindObjectsOfType<Timer>();
-        timer = timers[0];
-        // Debug.Log(timer.name);
-        score = FindObjectsOfType<Score>()[0];
-        // Debug.Log(score.name);
-
-        boxes = new BoxList(1);
-        rList = new RegionList();
-
-        // Get Regions in sidebar
-        sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
-    
-
+    public void updateIsDroppedCallback()
+    {
         isDroppedCallback = (string id, Vector2 location) =>
         {
             string match = boxes.findBoxMatch(location);
-            Debug.Log(match);
 
             if (match == id)
             {
                 // update score
-                score.updateScore(true);
+                onUpdateScore(true);
 
                 // update box label
                 boxes.updateBoxLabel(id);
@@ -75,28 +62,43 @@ public class Map : MonoBehaviour
                 // check if game is over & end it if so:
                 if (rList.allMatched())
                 {
-                    // // calculate final score
-                    // float elapsedSeconds = timer.getElapsedSeconds();
-                    // score.calculateFinalScore((int)elapsedSeconds, level);
-
-                    // // update high score
-                    // if (score.CurrentScore > highScore)
-                    // {
-                    //     highScore = score.CurrentScore;
-                    // }
-
-                    // move to end page
-                    SceneManager.LoadScene("EndMenu");
+                    onEndGame(timer);
                 }
             }
-            else
+            else if (match != null)
             {
-                // score.updateScore(false);
+                onUpdateScore(false);
             }
         };
 
         foreach (Region r in sidebarList)
             r.IsDroppedCallback = isDroppedCallback;
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        float[] yPosArr = new float[] { 3.16f, 2.38f, 1.57f, 0.73f, -0.06f, -0.87f, -1.69f, -2.51f, -3.35f, -4.14f };
+        string[] yPosArr2 = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
+        
+        // temporary backend - instead we would randomly generate 10 different states & mark which have been selected in a list
+        string[] allText = new string[] { "Massachusetts", "a", "b", "c", "d", "e", "f", "g", "h", "i" };
+
+        // create the first 10 label objects
+        for(int i=0; i<10; i++) {
+            createRegionLabelObject(yPosArr2[i], allText[i], -7.27f, yPosArr[i]);
+        }
+
+
+        Timer[] timers = FindObjectsOfType<Timer>();
+        timer = timers[0];
+
+        boxes = new BoxList(1);
+        rList = new RegionList();
+
+        // Get Regions in sidebar
+        sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
     }
 
 
