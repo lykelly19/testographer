@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoxList
 {
     Box[] boxes;
-    int hlIndex; // index of currently highlighted box
     int level;
     // FIXME: list of key-value pairs with id as the key and abbreviation as the value
 
@@ -23,7 +23,6 @@ public class BoxList
 
     public BoxList(int difficulty)
     {
-        hlIndex = -1;
         populateList();
         level = difficulty;
     }
@@ -72,7 +71,7 @@ public class BoxList
 
             // Check if within certain radius
             // FIXME: pick a radius that makes sense. 0.1 was just a guess.
-            if(xDif < 0.5 && yDif < 0.5)
+            if(xDif < 0.3 && yDif < 0.3)
             {
                 return i;
             }
