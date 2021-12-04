@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Region : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Region : MonoBehaviour
     System.Action<string, Vector2> isDroppedCallback;
     public bool dragging = false;
     private Vector2 originalPosition;
+    Text label;
 
     public void Start()
     {
@@ -59,6 +61,10 @@ public class Region : MonoBehaviour
         set
         {
             id = value;
+            if (label)
+            {
+                label.text = value;
+            }
         }
     }
 
@@ -71,6 +77,18 @@ public class Region : MonoBehaviour
         set
         {
             isMatched = value;
+        }
+    }
+
+    public Text Label
+    {
+        get
+        {
+            return label;
+        }
+        set
+        {
+            label = value;
         }
     }
 
