@@ -79,23 +79,24 @@ public class Map : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float[] yPosArr = new float[] { 3.16f, 2.38f, 1.57f, 0.73f, -0.06f, -0.87f, -1.69f, -2.51f, -3.35f, -4.14f };
-        string[] yPosArr2 = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
-        
-        // temporary backend - instead we would randomly generate 10 different states & mark which have been selected in a list
-        string[] allText = new string[] { "Massachusetts", "a", "b", "c", "d", "e", "f", "g", "h", "i" };
-
-        // create the first 10 label objects
-        for(int i=0; i<10; i++) {
-            createRegionLabelObject(yPosArr2[i], allText[i], -7.27f, yPosArr[i]);
-        }
-
-
         Timer[] timers = FindObjectsOfType<Timer>();
         timer = timers[0];
 
         boxes = new BoxList(1);
         rList = new RegionList();
+
+
+
+        // randomly generate 10 state names
+        List<string> sidebarListNames = rList.generateSidebarList(10);
+
+        float[] yPosArr = new float[] { 3.16f, 2.38f, 1.57f, 0.73f, -0.06f, -0.87f, -1.69f, -2.51f, -3.35f, -4.14f };
+
+        // create the first 10 label objects
+        for(int i=0; i<10; i++) {
+            createRegionLabelObject(i.ToString(), sidebarListNames[i], -7.27f, yPosArr[i]);
+        }
+
 
         // Get Regions in sidebar
         sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
