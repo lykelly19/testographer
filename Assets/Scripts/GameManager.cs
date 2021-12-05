@@ -95,6 +95,10 @@ public class GameManager : MonoBehaviour
         };
 
         currentMap.updateIsDroppedCallback();
+
+        // set up the back button to redirect back to start menu
+        Button btn = GameObject.FindGameObjectsWithTag("Button")[0].GetComponent<Button>();
+        btn.onClick.AddListener(delegate { changeScene("StartMenu"); });
     }
 
 
