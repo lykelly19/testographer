@@ -7,7 +7,7 @@ public class BoxList
 {
     Box[] boxes;
     int level;
-    // FIXME: list of key-value pairs with id as the key and abbreviation as the value
+    Dictionary<string,string> abbreviations;
 
     public int Level
     {
@@ -23,6 +23,61 @@ public class BoxList
 
     public BoxList(int difficulty)
     {
+    	abbreviations = new Dictionary<string,string>()
+    	{
+    	{"Alabama","AL"},
+    	{"Alaska","AK"},
+    	{"Arizona","AZ"},
+    	{"Arkansas","AR"},
+    	{"California","CA"},
+    	{"Colorado","CO"},
+    	{"Connecticut","CT"},
+    	{"Delaware","DE"},
+    	{"Florida","FL"},
+    	{"Georgia","GA"},
+    	{"Hawaii","HI"},
+    	{"Idaho","ID"},
+    	{"Illinois","IL"},
+    	{"Indiana","IN"},
+    	{"Iowa","IA"},
+    	{"Kansas","KS"},
+    	{"Kentucky","KY"},
+    	{"Louisiana","LA"},
+    	{"Maine","ME"},
+    	{"Maryland","MD"},
+    	{"Massachusetts","MA"},
+    	{"Michigan","MI"},
+    	{"Minnesota","MN"},
+    	{"Mississippi","MS"},
+    	{"Missouri","MO"},
+    	{"Montana","MT"},
+    	{"Nebraska","NE"},
+    	{"Nevada","NV"},
+    	{"New Hampshire","NH"},
+    	{"New Jersey","NJ"},
+    	{"New Mexico","NM"},
+    	{"New York","NY"},
+    	{"North Carolina","NC"},
+    	{"North Dakota","ND"},
+    	{"Ohio","OH"},
+    	{"Oklahoma","OK"},
+    	{"Oregon","OR"},
+    	{"Pennsylvania","PA"},
+    	{"Rhode Island","RI"},
+    	{"South Carolina","SC"},
+    	{"South Dakota","SD"},
+    	{"Tennessee","TN"},
+    	{"Texas","TX"},
+    	{"Utah","UT"},
+    	{"Vermont","VT"},
+    	{"Virginia","VA"},
+    	{"Washington","WA"},
+    	{"West Virginia","WV"},
+    	{"Wisconsin","WI"},
+    	{"Wyoming","WY"}
+    	
+    	
+    	};
         populateList();
         level = difficulty;
     }
@@ -39,6 +94,11 @@ public class BoxList
             b.X = b.transform.position.x;
             b.Y = b.transform.position.y;
             b.Level = level;
+            if(level == 0 && b.name.Length > 0)
+            {
+            	b.Label = b.name.Substring(0,1);
+            }
+            b.abbreviation = abbreviations[b.name];
         }
     }
 
@@ -51,7 +111,7 @@ public class BoxList
         {
             if(boxes[i].name == name)
             {
-                boxes[i].Label = boxes[i].name;
+                boxes[i].Label = boxes[i].abbreviation;
                 break;
             }
         }
