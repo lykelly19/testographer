@@ -16,8 +16,6 @@ public class Map : MonoBehaviour
     RegionList rList;
     Region[] sidebarList;
 
-    Timer timer;
-
     public System.Action<Timer> OnEndGame
     {
         set
@@ -32,6 +30,11 @@ public class Map : MonoBehaviour
         {
             onUpdateScore = value;
         }
+    }
+
+    public bool allMatched()
+    {
+        return rList.allMatched();
     }
 
     public void updateIsDroppedCallback()
@@ -60,12 +63,6 @@ public class Map : MonoBehaviour
 
                 // update box label
                 boxes.updateBoxLabel(id);
-
-                // check if game is over & end it if so:
-                if (rList.allMatched())
-                {
-                    onEndGame(timer);
-                }
             }
             else if (match != null)
             {
@@ -81,13 +78,9 @@ public class Map : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer[] timers = FindObjectsOfType<Timer>();
-        timer = timers[0];
 
         boxes = new BoxList(1);
         rList = new RegionList();
-
-
 
         // randomly generate 10 state names
         List<string> sidebarListNames = rList.generateSidebarList(10);
@@ -103,8 +96,6 @@ public class Map : MonoBehaviour
         // Get Regions in sidebar
         sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
     }
-
-
 
 
     void createRegionLabelObject(string gameObjectName, string displayText, float xPos, float yPos) {
@@ -166,6 +157,11 @@ public class Map : MonoBehaviour
 
         myText.GetComponent<RectTransform>().localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
+    }
+
+    public void SetActive(bool isActive)
+    {
+        boxes.SetActive(isActive);
     }
 
     // Update is called once per frame

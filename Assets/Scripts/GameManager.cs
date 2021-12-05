@@ -12,10 +12,18 @@ public class GameManager : MonoBehaviour
     int chosenDifficulty;
     Map currentMap = null;
     Score score = null;
+    Timer timer;
     int highScore = 0;
     public Text endScoreText;
     public Text gameScoreText;
     public Text highScoreText;
+
+    GameObject gameCanvas;
+    GameObject endMenu;
+
+    bool gameOver = false;
+    float elapsedSeconds;
+    int currentScore;
 
     public Map CurrentMap
     {
@@ -67,23 +75,34 @@ public class GameManager : MonoBehaviour
         currentMap = FindObjectsOfType<Map>()[0];
         
         score = FindObjectsOfType<Score>()[0];
-
-        gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
-
-        currentMap.OnEndGame = (Timer timer) =>
+        Text[] texts = FindObjectsOfType<Text>();
+        foreach (Text t in texts)
         {
-            float elapsedSeconds = timer.getElapsedSeconds();
-            score.calculateFinalScore((int)elapsedSeconds, chosenDifficulty);
-
-            // update high score
-            if (score.CurrentScore > highScore)
+            if(t.transform.name == "Score")
             {
-                highScore = score.CurrentScore;
+                gameScoreText = t;
+                gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
             }
+        }
 
-            // move to end page
-            SceneManager.LoadScene("EndMenu");
-        };
+        GameObject[] roots = SceneManager.GetActiveScene().GetRootGameObjects();
+
+        foreach (GameObject r in roots)
+        {
+            if (r.name == "EndMenu")
+            {
+                Debug.Log("Found EndMenu GameObject");
+                endMenu = r;
+                endMenu.SetActive(false);
+            }
+            if (r.name == "GameCanvas")
+            {
+                Debug.Log("Found GamePage Canvas");
+                gameCanvas = r;
+            }
+        }
+
+        
 
         currentMap.OnUpdateScore = (bool isMatch) =>
         {
@@ -97,10 +116,32 @@ public class GameManager : MonoBehaviour
         currentMap.updateIsDroppedCallback();
     }
 
-
-    public void setEndScore()
+    public void calculateFinalScore()
     {
-        endScoreText.text = score.getEndScoreDisplay();
+        // Set original score before bonus.
+        int originalScore = currentScore;
+
+        // Calculate time bonus.
+        double logCalc;
+        if (elapsedSeconds <= 1000)
+        {
+            logCalc = Math.Log(elapsedSeconds) * 1000;
+        }
+        else if (elapsedSeconds <= 0)
+        {
+            logCalc = 0;
+        }
+        else
+        {
+            logCalc = 3000;
+        }
+        int timeBonus = (3000 - (int)logCalc) / 10;
+
+        // Calculate final score.
+        // Multiplier is applied BEFORE time bonus is added.
+
+        currentScore += Math.Abs(timeBonus);
+        endScoreText.text = "Your Score: " + originalScore + " + " + timeBonus + " = " + currentScore;
     }
 
     // displaying the high score message (code structure)
@@ -134,6 +175,14 @@ public class GameManager : MonoBehaviour
     // Required by Unity for this object.
     void Update()
     {
+        if(timer)
+        {
+            elapsedSeconds = timer.getElapsedSeconds();
+        }
+        if(score)
+        {
+            currentScore = score.CurrentScore;
+        }
         if (score != null) {
             gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
         }
@@ -141,7 +190,34 @@ public class GameManager : MonoBehaviour
         if ((FindObjectsOfType<Score>().Length > 0 || FindObjectsOfType<Map>().Length > 0)
             && currentMap == null)
         {
+            Timer[] timers = FindObjectsOfType<Timer>();
+            if(timers.Length > 0)
+            {
+                timer = timers[0];
+            }
             playGame();
+        }
+
+        if(currentMap && currentMap.allMatched() && !gameOver)
+        {
+            
+
+            Text[] texts = FindObjectsOfType<Text>();
+            foreach (Text t in texts)
+            {
+                if(t.transform.name == "Subtitle")
+                {
+                    endScoreText = t;
+                    calculateFinalScore();
+                }
+            }
+
+            // move to end page
+            endMenu.SetActive(true);
+            gameCanvas.SetActive(false);
+            currentMap.SetActive(false);
+
+            gameOver = true;
         }
     }
 }

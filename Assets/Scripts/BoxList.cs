@@ -57,6 +57,14 @@ public class BoxList
         }
     }
 
+    public void SetActive(bool isActive)
+    {
+        foreach (Box b  in boxes)
+        {
+            b.gameObject.SetActive(isActive);
+        }
+    }
+
     // /*
     //  * Searches list for a Box with a matching location
     //  * If found: return index

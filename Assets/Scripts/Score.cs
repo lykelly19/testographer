@@ -9,7 +9,6 @@ public class Score : MonoBehaviour
     int currentScore;
     int originalScore;
     int timeBonus;
-    int levelMultiplier;
 
     public int CurrentScore 
     { 
@@ -26,11 +25,6 @@ public class Score : MonoBehaviour
         get { return timeBonus; }
         set { timeBonus = value; }
     }
-    public int LevelMultiplier 
-    { 
-        get { return levelMultiplier; }
-        set { levelMultiplier = value; }
-    }
 
     // Constructor
     public Score()
@@ -39,7 +33,6 @@ public class Score : MonoBehaviour
         // Start at -1 for variables not used until calculateFinalScore.
         originalScore = -1;
         timeBonus = -1;
-        levelMultiplier = -1;
     }
 
     // Changes score based on the correctness of the most recent choice.
@@ -59,23 +52,10 @@ public class Score : MonoBehaviour
     // elapsed and the difficulty of the level.
     // timeElapsed is in seconds.
     // level = 0 for easy, level = 1 for hard.
-    public void calculateFinalScore(int timeElapsed, int level)
+    public void calculateFinalScore(int timeElapsed)
     {
         // Set original score before bonus.
         originalScore = currentScore;
-
-        // Calculate level multiplier.
-        if(level == 0)
-        {
-            levelMultiplier = 1;
-        } else if (level == 1)
-        {
-            levelMultiplier = 2;
-        } else
-        {
-            Console.WriteLine("Error, invalid level in calculateFinalScore. Exiting . . .");
-            System.Environment.Exit(-1);
-        }
 
         // Calculate time bonus.
         double logCalc;
@@ -93,12 +73,12 @@ public class Score : MonoBehaviour
 
         // Calculate final score.
         // Multiplier is applied BEFORE time bonus is added.
-        currentScore *= levelMultiplier;
-        currentScore += timeBonus;
+ 
+        currentScore += Math.Abs(timeBonus);
     }
 
     public string getEndScoreDisplay()
     {
-        return "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + currentScore;
+        return "Your Score: " + originalScore + " + " + timeBonus + " = " + currentScore;
     }
 }
