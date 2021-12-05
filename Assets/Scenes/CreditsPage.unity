@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1347314643}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: changeScene
         m_Mode: 5
@@ -1101,9 +1101,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1347314638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8008a73dcee2aa74a995fe6c8718ad58, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cae19548ae9d43ffbb15c4b2e1f6513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endScoreText: {fileID: 0}
+  gameScoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!1 &1819221239
 GameObject:
   m_ObjectHideFlags: 0
