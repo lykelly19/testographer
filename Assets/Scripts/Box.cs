@@ -13,6 +13,7 @@ public class Box : MonoBehaviour
     private int level;
     private string label;
     public Text boxText;
+    public string abbreviation;
 
     public string Label
     {
