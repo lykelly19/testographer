@@ -105,7 +105,6 @@ public class BoxList
             if(boxes[i].name == name)
             {
                 boxes[i].Label = boxes[i].abbreviation;
-                boxes[i].setCorrectMatchColor();
                 break;
             }
         }
