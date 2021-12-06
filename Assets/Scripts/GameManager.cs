@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public void chooseDifficulty(int level) 
     {
         if(level >= 0 && level <= 1) { // Make sure is valid level
+            DataManager dm = FindObjectOfType<DataManager>();
+            dm.difficulty = level;
             chosenDifficulty = level;
         } else
         { // Not a valid level.
@@ -73,12 +75,16 @@ public class GameManager : MonoBehaviour
         currentMap.OnEndGame = (Timer timer) =>
         {
             float elapsedSeconds = timer.getElapsedSeconds();
+
+            chosenDifficulty = FindObjectOfType<DataManager>().difficulty;
+
             score.calculateFinalScore((int)elapsedSeconds, chosenDifficulty);
 
             // update high score
             if (score.CurrentScore > highScore)
             {
                 highScore = score.CurrentScore;
+                FindObjectOfType<DataManager>().highScore = score.CurrentScore;
             }
 
             // move to end page
@@ -128,7 +134,7 @@ public class GameManager : MonoBehaviour
             if (t.name == "HighScoreDisplay")
             {
                 highScoreText = t;
-                highScoreText.text = "High Score: " + System.Convert.ToString(highScore);
+                highScoreText.text = "High Score: " + System.Convert.ToString(FindObjectOfType<DataManager>().highScore);
                 break;
             }
         }
@@ -146,6 +152,22 @@ public class GameManager : MonoBehaviour
             && currentMap == null)
         {
             playGame();
+        }
+
+
+        // display end scene text
+
+        if(SceneManager.GetActiveScene().name == "EndMenu") 
+        {
+            Text[] texts = FindObjectsOfType<Text>();
+            foreach (Text t in texts) {
+
+                if(t.name == "Subtitle")
+                {
+                    t.text = FindObjectOfType<DataManager>().finalScoreText;
+                }
+            }
+
         }
     }
 }

@@ -95,6 +95,9 @@ public class Score : MonoBehaviour
         // Multiplier is applied BEFORE time bonus is added.
         currentScore *= levelMultiplier;
         currentScore += timeBonus;
+
+        DataManager dm = FindObjectOfType<DataManager>();
+        dm.finalScoreText = getEndScoreDisplay();
     }
 
     public string getEndScoreDisplay()
