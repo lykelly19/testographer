@@ -70,13 +70,15 @@ public class Box : MonoBehaviour
     // give the box highlighted styling
     public void highlight()
     {
-        GetComponent<Renderer>().material.color = new Color(0.062f, 0.22f, 0.0f, 1);
+        if(GetComponent<Renderer>())
+            GetComponent<Renderer>().material.color = new Color(0.062f, 0.22f, 0.0f, 1);
     }
 
     // unhighlight the box
     public void unHighlight()
     {
-        GetComponent<Renderer>().material.color = Color.white;
+        if(GetComponent<Renderer>())
+            GetComponent<Renderer>().material.color = Color.white;
     }
 
     // on mouse over, highlight the box
@@ -109,11 +111,4 @@ public class Box : MonoBehaviour
             System.Environment.Exit(-1);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    
 }

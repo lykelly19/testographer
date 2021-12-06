@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class RegionList
 {
-
     // DECLARATIONS
     List<string> unmatched;
     List<string> matched;
-
 
     public RegionList()
     {
@@ -90,7 +88,6 @@ public class RegionList
     * generateSidebarList() => RegionList 
     * Randomly generates a list of ten Regions and returns it
     */
-
     public List<string> generateSidebarList(int size)
     {
         List<string> sidebarList = new List<string>();
@@ -128,6 +125,7 @@ public class RegionList
         
         return newId;
     }
+
     /*
      * getRandomUnmatched() => string
      * Picks a random item in unmatched and returns it
@@ -153,7 +151,6 @@ public class RegionList
         }
         return false;
     }
-   
 
     // Resets RegionList back to it's initial state.
     public void reset()

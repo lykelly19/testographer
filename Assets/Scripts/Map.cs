@@ -43,9 +43,7 @@ public class Map : MonoBehaviour
             if (match == id)
             {
                 // update score
-                onUpdateScore(true);
-
-                
+                onUpdateScore(true);   
 
                 // replace with unmatched region
                 int index = -1;
@@ -97,13 +95,9 @@ public class Map : MonoBehaviour
             createRegionLabelObject(i.ToString(), sidebarListNames[i], -7.27f, yPosArr[i]);
         }
 
-
         // Get Regions in sidebar
         sidebarList = FindObjectsOfType<Region>();  // after defining IsDroppedCallback, add each Region in regions to rList
     }
-
-
-
 
     void createRegionLabelObject(string gameObjectName, string displayText, float xPos, float yPos) {
 
@@ -145,7 +139,6 @@ public class Map : MonoBehaviour
         myCanvas.GetComponent<RectTransform>().sizeDelta = new Vector2(20, 10);
         
 
-
         // Text
         GameObject myText;
 
@@ -164,11 +157,6 @@ public class Map : MonoBehaviour
 
         myText.GetComponent<RectTransform>().localScale = new Vector3(0.01f, 0.01f, 0.01f);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
 

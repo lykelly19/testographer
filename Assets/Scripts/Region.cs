@@ -23,14 +23,6 @@ public class Region : MonoBehaviour
         dragging = true;
     }
 
-    // void OnMouseUp()
-    // {
-    //     if(dragging == true) {
-    //         dragging = false;
-    //         isDroppedCallback(id, regionCoordinates);
-    //     }
-    // }
-
     // Update is called once per frame
     void Update()
     {
@@ -45,7 +37,6 @@ public class Region : MonoBehaviour
                 isDroppedCallback(id, transform.position);
             }
         }
-        
         else
         {
             transform.position = originalPosition;

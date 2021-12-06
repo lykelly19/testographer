@@ -77,20 +77,6 @@ public class Score : MonoBehaviour
             System.Environment.Exit(-1);
         }
 
-        // Calculate time bonus.
-      //  double logCalc;
-     //   if(timeElapsed <= 1000)
-      //  {
-      //      logCalc = Math.Log(timeElapsed) * 1000;
-      //  } else if (timeElapsed <= 0)
-      //  {
-      //      logCalc = 0;
-      //  } else
-     //   {
-     //       logCalc = 3000;
-    //    }
-     //   timeBonus = (3000 - (int) logCalc) / 10;
-
         // Calculate final score.
         // Multiplier is applied BEFORE time bonus is added.
         if(timeElapsed > 360)
