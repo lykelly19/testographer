@@ -112,6 +112,11 @@ public class GameManager : MonoBehaviour
     {
         Screen.SetResolution(1920, 1080, false);  // set screen width & height
 
+        if(!FindObjectOfType<DataManager>()) {
+            GameObject gObj = new GameObject("Data Manager"); 
+            gObj.AddComponent<DataManager>();
+        }
+
         Text[] texts = FindObjectsOfType<Text>();
         foreach(Text t in texts)
         {

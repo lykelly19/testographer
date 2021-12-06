@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScoreText: {fileID: 0}
   gameScoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!1 &104576942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1111,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MapMenu
+          m_StringArgument: LevelMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &390586568
@@ -1165,6 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScoreText: {fileID: 0}
   gameScoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!1 &526698656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScoreText: {fileID: 853521262}
   gameScoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!1 &1059281186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endScoreText: {fileID: 0}
   gameScoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
 --- !u!1 &1238065445
 GameObject:
   m_ObjectHideFlags: 0
