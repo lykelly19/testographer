@@ -4,11 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
-
 {
-
-public Text timerText;
-private float startTime;
+    public Text timerText;
+    private float startTime;
 
     // resets the timer so counting can start again
     private void Reset()

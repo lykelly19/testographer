@@ -81,14 +81,10 @@ public class Map : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer[] timers = FindObjectsOfType<Timer>();
-        timer = timers[0];
+        Timer[] timer = FindObjectOfType<Timer>();
 
-        Debug.Log(FindObjectOfType<DataManager>().difficulty);
         boxes = new BoxList(FindObjectOfType<DataManager>().difficulty);
         rList = new RegionList();
-
-
 
         // randomly generate 10 state names
         List<string> sidebarListNames = rList.generateSidebarList(10);

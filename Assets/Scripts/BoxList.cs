@@ -11,14 +11,8 @@ public class BoxList
 
     public int Level
     {
-        get
-        {
-            return level;
-        }
-        set
-        {
-            level = value;
-        }
+        get { return level; }
+        set { level = value; }
     }
 
     public BoxList(int difficulty)
@@ -150,13 +144,4 @@ public class BoxList
 
         return null;
     }
-
-    // // Resets Boxlist back to its original state.
-    // public void reset()
-    // {
-    //     boxes = System.Array.Empty<Box>();
-    //     hlIndex = -1;
-    //     populateList();
-    // }
-
 }

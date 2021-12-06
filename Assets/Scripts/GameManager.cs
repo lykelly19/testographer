@@ -66,10 +66,8 @@ public class GameManager : MonoBehaviour
     // Does everything the game needs to do in a single frame.
     void playGame()
     {
-        currentMap = FindObjectsOfType<Map>()[0];
-        
-        score = FindObjectsOfType<Score>()[0];
-
+        currentMap = FindObjectOfType<Map>();
+        score = FindObjectOfType<Score>();
         gameScoreText.text = "Score: " + System.Convert.ToString(score.CurrentScore);
 
         currentMap.OnEndGame = (Timer timer) =>
@@ -106,13 +104,6 @@ public class GameManager : MonoBehaviour
         Button btn = GameObject.FindGameObjectsWithTag("Button")[0].GetComponent<Button>();
         btn.onClick.AddListener(delegate { changeScene("StartMenu"); });
     }
-
-
-    public void setEndScore()
-    {
-        endScoreText.text = score.getEndScoreDisplay();
-    }
-
 
     // Start is called before the first frame update.
     // Required by Unity for this object.
