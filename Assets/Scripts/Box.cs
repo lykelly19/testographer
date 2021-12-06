@@ -14,6 +14,7 @@ public class Box : MonoBehaviour
     private string label;
     public Text boxText;
     public string abbreviation;
+    private bool matched = false;
 
     public string Label
     {
@@ -67,16 +68,23 @@ public class Box : MonoBehaviour
 
     // METHODS
     
+    public void setCorrectMatchColor()
+    {
+        matched = true;
+        GetComponent<Renderer>().material.color = Color.red;
+    }
+
     // give the box highlighted styling
     public void highlight()
     {
-        GetComponent<Renderer>().material.color = Color.red;
+        GetComponent<Renderer>().material.color = new Color(0.062f, 0.22f, 0.0f, 1);
     }
 
     // unhighlight the box
     public void unHighlight()
     {
-        GetComponent<Renderer>().material.color = Color.white;
+        if(!matched) 
+            GetComponent<Renderer>().material.color = Color.white;
     }
 
     // on mouse over, highlight the box
