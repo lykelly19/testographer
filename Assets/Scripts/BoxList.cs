@@ -75,11 +75,10 @@ public class BoxList
     	{"West Virginia","WV"},
     	{"Wisconsin","WI"},
     	{"Wyoming","WY"}
-    	
-    	
     	};
-        populateList();
+        
         level = difficulty;
+        populateList();
     }
 
     // Reads data from file at filePath and populates BoxList with it

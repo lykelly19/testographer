@@ -113,14 +113,6 @@ public class GameManager : MonoBehaviour
         endScoreText.text = score.getEndScoreDisplay();
     }
 
-    // displaying the high score message (code structure)
-    /*
-    public void displayHighScoreMesssage(GameObject highScoreObj) 
-    {
-        obj.SetActive(true);
-    }
-    */
-
 
     // Start is called before the first frame update.
     // Required by Unity for this object.
@@ -156,18 +148,15 @@ public class GameManager : MonoBehaviour
 
 
         // display end scene text
-
         if(SceneManager.GetActiveScene().name == "EndMenu") 
         {
             Text[] texts = FindObjectsOfType<Text>();
             foreach (Text t in texts) {
-
                 if(t.name == "Subtitle")
                 {
                     t.text = FindObjectOfType<DataManager>().finalScoreText;
                 }
             }
-
         }
     }
 }

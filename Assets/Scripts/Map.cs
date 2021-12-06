@@ -84,7 +84,8 @@ public class Map : MonoBehaviour
         Timer[] timers = FindObjectsOfType<Timer>();
         timer = timers[0];
 
-        boxes = new BoxList(1);
+        Debug.Log(FindObjectOfType<DataManager>().difficulty);
+        boxes = new BoxList(FindObjectOfType<DataManager>().difficulty);
         rList = new RegionList();
 
 
