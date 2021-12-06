@@ -9,7 +9,7 @@ public class DataManager : MonoBehaviour
     public int score;
     public int difficulty;
     public int highScore;
-    public string finalScoreText;
+    public string finalScoreText = "";
 
     // called when the script instance is being loaded
     void Awake()

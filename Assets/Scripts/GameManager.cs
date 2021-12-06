@@ -39,8 +39,7 @@ public class GameManager : MonoBehaviour
     public void chooseDifficulty(int level) 
     {
         if(level >= 0 && level <= 1) { // Make sure is valid level
-            DataManager dm = FindObjectOfType<DataManager>();
-            dm.difficulty = level;
+            FindObjectOfType<DataManager>().difficulty = level;
             chosenDifficulty = level;
         } else
         { // Not a valid level.
@@ -79,11 +78,13 @@ public class GameManager : MonoBehaviour
             score.calculateFinalScore((int)elapsedSeconds, chosenDifficulty);
 
             // update high score
-            if (score.CurrentScore > highScore)
+            if (score.CurrentScore > FindObjectOfType<DataManager>().highScore)
             {
                 highScore = score.CurrentScore;
                 FindObjectOfType<DataManager>().highScore = score.CurrentScore;
             }
+
+            FindObjectOfType<DataManager>().finalScoreText = score.getEndScoreDisplay();
 
             // move to end page
             SceneManager.LoadScene("EndMenu");

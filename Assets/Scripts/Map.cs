@@ -81,7 +81,8 @@ public class Map : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Timer timer = FindObjectOfType<Timer>();
+        Timer[] timers = FindObjectsOfType<Timer>();
+        timer = timers[0];
 
         boxes = new BoxList(FindObjectOfType<DataManager>().difficulty);
         rList = new RegionList();
