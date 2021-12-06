@@ -78,23 +78,35 @@ public class Score : MonoBehaviour
         }
 
         // Calculate time bonus.
-        double logCalc;
-        if(timeElapsed <= 1000)
-        {
-            logCalc = Math.Log(timeElapsed) * 1000;
-        } else if (timeElapsed <= 0)
-        {
-            logCalc = 0;
-        } else
-        {
-            logCalc = 3000;
-        }
-        timeBonus = (3000 - (int) logCalc) / 10;
+      //  double logCalc;
+     //   if(timeElapsed <= 1000)
+      //  {
+      //      logCalc = Math.Log(timeElapsed) * 1000;
+      //  } else if (timeElapsed <= 0)
+      //  {
+      //      logCalc = 0;
+      //  } else
+     //   {
+     //       logCalc = 3000;
+    //    }
+     //   timeBonus = (3000 - (int) logCalc) / 10;
 
         // Calculate final score.
         // Multiplier is applied BEFORE time bonus is added.
+        if(timeElapsed > 360)
+        {
+        timeBonus = 0;
+        }
+        else
+        {
+        timeBonus = 360 - timeElapsed;
+        timeBonus = timeBonus*5;
+        }
         currentScore *= levelMultiplier;
         currentScore += timeBonus;
+
+        DataManager dm = FindObjectOfType<DataManager>();
+        dm.finalScoreText = getEndScoreDisplay();
     }
 
     public string getEndScoreDisplay()
@@ -102,3 +114,4 @@ public class Score : MonoBehaviour
         return "Your Score: " + originalScore + " x " + levelMultiplier + " + " + timeBonus + " = " + currentScore;
     }
 }
+
