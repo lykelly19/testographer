@@ -533,15 +533,12 @@ MonoBehaviour:
   m_Text: 'Game Instructions
 
 
-    1. Select a map
+    1. Select a difficulty
 
-    2. Select a difficulty
+    2. Drag region names
+    to their correct spot on the map
 
-    3.
-    Drag region names to their correct spot on the map
-
-    4. Guess quickly for
-    a score bonus!'
+    3. Guess quickly for a score bonus!'
 --- !u!222 &346509145
 CanvasRenderer:
   m_ObjectHideFlags: 0
